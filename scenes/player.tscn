@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpijbgtfhbkqm"]
+
+[ext_resource type="Texture2D" uid="uid://bocyrjso758nl" path="res://prototypeSprites/cute_pink_pixel_art_character-removebg-preview.png" id="1_cqi0y"]
+[ext_resource type="Script" path="res://scripts/playerMovement.gd" id="1_oy3nk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gklh0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8br6c"]
+radius = 65.0
+height = 312.0
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(3, 0)
+motion_mode = 1
+script = ExtResource("1_oy3nk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 2)
+sprite_frames = SubResource("SpriteFrames_gklh0")
+
+[node name="mamaSprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(2.00003, -0.999985)
+scale = Vector2(0.84, 0.84)
+texture = ExtResource("1_cqi0y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
+shape = SubResource("CapsuleShape2D_8br6c")
