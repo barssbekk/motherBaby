@@ -6,11 +6,10 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_gklh0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8br6c"]
-radius = 9.0
-height = 38.0
+radius = 2.0
+height = 9.0
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(3, 0)
 motion_mode = 1
 script = ExtResource("1_oy3nk")
 
@@ -20,10 +19,9 @@ sprite_frames = SubResource("SpriteFrames_gklh0")
 
 [node name="mamaSprite" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(7.62939e-06, -0.999992)
-scale = Vector2(0.108, 0.108)
+position = Vector2(-2.38419e-07, 0)
+scale = Vector2(0.022, 0.022)
 texture = ExtResource("1_cqi0y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 1)
 shape = SubResource("CapsuleShape2D_8br6c")
