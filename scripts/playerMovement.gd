@@ -1,7 +1,11 @@
 extends CharacterBody2D
 
+signal life_changed(player_hearts) 
+
 @export var movement_speed : float = 50
+
 var character_direction : Vector2
+var max_hearts: int = 1 # the number of hearts 
 
 func _physics_process(delta: float) -> void:
 	character_direction.x = Input.get_axis("move_left", "move_right")
