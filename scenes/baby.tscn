@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://d26vwd4g3x0x8"]
+
+[ext_resource type="Script" path="res://scripts/babyMovement.gd" id="1_sjrgl"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_rgjjr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aicay"]
+size = Vector2(5, 10)
+
+[node name="Baby" type="CharacterBody2D"]
+script = ExtResource("1_sjrgl")
+
+[node name="babySprite" type="Sprite2D" parent="."]
+modulate = Color(1, 0.235294, 1, 1)
+position = Vector2(0.5, 2.38419e-07)
+scale = Vector2(5, 10)
+texture = SubResource("CanvasTexture_rgjjr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_aicay")
