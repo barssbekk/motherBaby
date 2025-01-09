@@ -287,4 +287,5 @@ tile_set = SubResource("TileSet_qotdw")
 [node name="UI" parent="." instance=ExtResource("4_vymbv")]
 
 [node name="Mob" parent="." instance=ExtResource("5_6v7r2")]
+z_index = 5
 position = Vector2(32, -100)

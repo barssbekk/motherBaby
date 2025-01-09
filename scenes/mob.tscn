@@ -10,6 +10,7 @@ radius = 7.0
 script = ExtResource("1_rurde")
 
 [node name="bat" parent="." instance=ExtResource("2_vlt1j")]
+z_index = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3)
