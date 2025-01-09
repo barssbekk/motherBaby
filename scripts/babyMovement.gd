@@ -1,11 +1,15 @@
 extends CharacterBody2D
 
+@export var baby_attack_damage := 2 
 @export var movement_speed : float = 60
 var character_direction : Vector2
 
 func _physics_process(delta: float) -> void:
 	character_direction.x = Input.get_axis("arrow_left", "arrow_right")
 	character_direction.y = Input.get_axis("arrow_up", "arrow_down")
+	
+	
+	
 	
 	# Flip
 	if (character_direction.x > 0) :
@@ -23,3 +27,11 @@ func _physics_process(delta: float) -> void:
 		#if %mamaSprite.animation != "Idle": %mamaSprite.animation = "Idle"
 		
 	move_and_slide()
+
+#Damage Script
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.has_method("damage"):
+		var attack = Attack.new()
+		attack.attack_damage = baby_attack_damage
+		area.damage(attack)
+		print("Baby did " + str(attack.attack_damage) + " damage!")
