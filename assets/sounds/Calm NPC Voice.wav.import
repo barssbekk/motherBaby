@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://buakp43tuijdl"
+path="res://.godot/imported/Calm NPC Voice.wav-db49cd8be42249e3f94dfdb5c25475ed.sample"
+
+[deps]
+
+source_file="res://assets/sounds/Calm NPC Voice.wav"
+dest_files=["res://.godot/imported/Calm NPC Voice.wav-db49cd8be42249e3f94dfdb5c25475ed.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

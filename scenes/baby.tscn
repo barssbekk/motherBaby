@@ -71,6 +71,6 @@ position = Vector2(3, -1)
 scale = Vector2(1.42857, 1.42857)
 sprite_frames = SubResource("SpriteFrames_hxlul")
 autoplay = "default"
-frame_progress = 0.980927
+frame_progress = 0.963818
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -30,10 +30,12 @@ func _physics_process(delta: float) -> void:
 		velocity = character_direction.normalized() * movement_speed
 		if $AnimatedSprite2D.animation != "run":
 			$AnimatedSprite2D.play("run")
+
 	else: 
 		velocity = Vector2.ZERO
 		if $AnimatedSprite2D.animation != "idle":
 			$AnimatedSprite2D.play("idle")
+
 			
 	move_and_slide()
 	
