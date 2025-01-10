@@ -1,26 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://f16y3mfyq1bv"]
+[gd_scene load_steps=8 format=3 uid="uid://f16y3mfyq1bv"]
 
 [ext_resource type="Script" path="res://scripts/mob.gd" id="1_rurde"]
-[ext_resource type="PackedScene" uid="uid://dc4xfsgjukcbm" path="res://scenes/HitboxComponent.tscn" id="2_ser45"]
+[ext_resource type="PackedScene" uid="uid://dc4xfsgjukcbm" path="res://scenes/hitboxComponent.tscn" id="2_ser45"]
 [ext_resource type="PackedScene" uid="uid://dpab547p7yqk4" path="res://scenes/bat.tscn" id="2_vlt1j"]
-[ext_resource type="PackedScene" uid="uid://bwdbnj13eriax" path="res://scenes/HealthComponent.tscn" id="3_l22xe"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cv2ch"]
+[ext_resource type="PackedScene" uid="uid://bwdbnj13eriax" path="res://scenes/healthComponent.tscn" id="3_l22xe"]
+[ext_resource type="PackedScene" uid="uid://24q08luwhx6e" path="res://scenes/damageComponent.tscn" id="5_awbk0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8a00q"]
 radius = 7.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cv2ch"]
+
 [node name="Mob" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 7
 script = ExtResource("1_rurde")
-
-[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("2_ser45")]
-health_component = NodePath("../HealthComponent")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
-position = Vector2(4.54747e-13, -1)
-rotation = -1.57079
-scale = Vector2(0.84, 1)
-shape = SubResource("CapsuleShape2D_cv2ch")
 
 [node name="bat" parent="." instance=ExtResource("2_vlt1j")]
 z_index = 5
@@ -32,3 +26,20 @@ rotation = -1.5708
 shape = SubResource("CapsuleShape2D_8a00q")
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_l22xe")]
+max_Health = 1
+
+[node name="damage_component" parent="." instance=ExtResource("5_awbk0")]
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("2_ser45")]
+collision_layer = 4
+collision_mask = 3
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(4.54747e-13, -1)
+rotation = -1.57079
+scale = Vector2(0.84, 1)
+shape = SubResource("CapsuleShape2D_cv2ch")
+
+[connection signal="area_entered" from="HitboxComponent" to="damage_component" method="_on_hitbox_component_area_entered"]
+[connection signal="area_exited" from="HitboxComponent" to="damage_component" method="_on_hitbox_component_area_exited"]
