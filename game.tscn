@@ -280,7 +280,7 @@ zoom = Vector2(1.5, 1.5)
 
 [node name="Mob" parent="." instance=ExtResource("5_6v7r2")]
 z_index = 5
-position = Vector2(-79, -199)
+position = Vector2(-73, -200)
 collision_mask = 2
 
 [node name="Baby" parent="." instance=ExtResource("2_2kw0m")]
