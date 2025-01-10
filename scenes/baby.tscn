@@ -1,13 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://d26vwd4g3x0x8"]
+[gd_scene load_steps=13 format=3 uid="uid://d26vwd4g3x0x8"]
 
 [ext_resource type="Script" path="res://scripts/babyMovement.gd" id="1_sjrgl"]
 [ext_resource type="Texture2D" uid="uid://bplnrh7j6k0ug" path="res://assets/sprites/BabehAnims.png" id="2_f4uj0"]
+[ext_resource type="PackedScene" uid="uid://24q08luwhx6e" path="res://scenes/damageComponent.tscn" id="3_sw05m"]
+[ext_resource type="PackedScene" uid="uid://dc4xfsgjukcbm" path="res://scenes/hitboxComponent.tscn" id="4_orrqr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aicay"]
 size = Vector2(5, 10)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_fum20"]
-radius = 6.5
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d0n4o"]
 atlas = ExtResource("2_f4uj0")
@@ -52,19 +51,18 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_fum20"]
+radius = 6.5
+
 [node name="Baby" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 7
 script = ExtResource("1_sjrgl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_aicay")
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.5, 0)
-shape = SubResource("CircleShape2D_fum20")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(3, -1)
@@ -73,4 +71,16 @@ sprite_frames = SubResource("SpriteFrames_hxlul")
 autoplay = "default"
 frame_progress = 0.755518
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[node name="damageComponent" parent="." instance=ExtResource("3_sw05m")]
+new_attack_damage = 1
+
+[node name="HitboxComponent" parent="." instance=ExtResource("4_orrqr")]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(0.5, 0)
+shape = SubResource("CircleShape2D_fum20")
+
+[connection signal="area_entered" from="HitboxComponent" to="damageComponent" method="_on_hitbox_component_area_entered"]
+[connection signal="area_exited" from="HitboxComponent" to="damageComponent" method="_on_hitbox_component_area_exited"]

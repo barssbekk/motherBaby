@@ -1,10 +1,12 @@
-[gd_scene load_steps=61 format=3 uid="uid://cpijbgtfhbkqm"]
+[gd_scene load_steps=64 format=3 uid="uid://cpijbgtfhbkqm"]
 
 [ext_resource type="Script" path="res://scripts/playerMovement.gd" id="1_oy3nk"]
 [ext_resource type="Texture2D" uid="uid://dfyfj6546x60m" path="res://assets/sprites/MotherBirthAnims.png" id="2_4keos"]
 [ext_resource type="Texture2D" uid="uid://bq4g6h8yh20qp" path="res://assets/sprites/MotherIdleAnims.png" id="2_vcn84"]
 [ext_resource type="Texture2D" uid="uid://d2jw1wf6lfehn" path="res://assets/sprites/MotherDeathAnims.png" id="3_2hkdt"]
 [ext_resource type="Texture2D" uid="uid://d4ea5agow1vd0" path="res://assets/sprites/MotherRunAnims.png" id="3_26h0w"]
+[ext_resource type="PackedScene" uid="uid://dc4xfsgjukcbm" path="res://scenes/hitboxComponent.tscn" id="6_devl0"]
+[ext_resource type="PackedScene" uid="uid://bwdbnj13eriax" path="res://scenes/healthComponent.tscn" id="7_3xmlx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_83wq4"]
 atlas = ExtResource("2_4keos")
@@ -404,8 +406,11 @@ animations = [{
 radius = 9.0
 height = 26.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tqoir"]
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 4
+collision_mask = 7
 motion_mode = 1
 script = ExtResource("1_oy3nk")
 
@@ -422,3 +427,14 @@ frame_progress = 0.638265
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3)
 shape = SubResource("CapsuleShape2D_8br6c")
+
+[node name="HealthComponent" parent="." instance=ExtResource("7_3xmlx")]
+max_Health = 1
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("6_devl0")]
+collision_mask = 5
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(0, -3)
+shape = SubResource("CapsuleShape2D_tqoir")

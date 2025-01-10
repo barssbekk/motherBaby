@@ -10,7 +10,7 @@ func _physics_process(delta: float) -> void:
 	var distance = global_position.distance_to(player.global_position)
 	
 	# Handle chasing and movement 
-	if distance < 130: # Chasing distance 
+	if distance < 130 and distance > 2: # Chasing distance 
 		if not is_chasing:
 			is_chasing = true
 			print("Player detected!")
@@ -23,11 +23,18 @@ func _physics_process(delta: float) -> void:
 			animated_sprite.play("idle")
 		velocity = Vector2.ZERO
 	
-	if velocity.x > 0: 
+	if velocity.x > 0 and distance > 2: 
 		if animated_sprite.flip_h:
 			animated_sprite.flip_h = false
-	elif velocity.x < 0: 
+	elif velocity.x < 0 and distance > 2: 
 		if not animated_sprite.flip_h:
 			animated_sprite.flip_h = true
 	
 	move_and_slide()
+	
+
+
+
+#Death Function called when health = 0
+func die():
+	queue_free()

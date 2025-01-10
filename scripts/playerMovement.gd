@@ -3,7 +3,6 @@ extends CharacterBody2D
 @export var movement_speed: float = 70
 var character_direction: Vector2
 var is_born = false  # For birth animation
-@export var health = 1  # Player health
 
 func _ready() -> void:
 	$AnimatedSprite2D.play("birth")  # Start birth animation
@@ -41,9 +40,6 @@ func _on_animation_finished():
 
 # Player death with animation and delay
 func die():
-	health -= 1
-	if health <= 0:
-		print("Player died!")  # Debug message
 		$AnimatedSprite2D.play("death")  # Play death animation
 		set_process(false)
 		set_physics_process(false)
