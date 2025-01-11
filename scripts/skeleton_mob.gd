@@ -37,3 +37,7 @@ func _physics_process(delta: float) -> void:
 #Death Function called when health = 0
 func die():
 	queue_free()
+
+
+func _on_damage_component_skeleton_attack() -> void:
+	animated_sprite.play("attack")

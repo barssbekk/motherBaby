@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://bq4g6h8yh20qp" path="res://assets/sprites/MotherIdleAnims.png" id="2_vcn84"]
 [ext_resource type="Texture2D" uid="uid://d2jw1wf6lfehn" path="res://assets/sprites/MotherDeathAnims.png" id="3_2hkdt"]
 [ext_resource type="Texture2D" uid="uid://d4ea5agow1vd0" path="res://assets/sprites/MotherRunAnims.png" id="3_26h0w"]
-[ext_resource type="PackedScene" uid="uid://dc4xfsgjukcbm" path="res://scenes/HitboxComponent.tscn" id="6_devl0"]
-[ext_resource type="PackedScene" uid="uid://bwdbnj13eriax" path="res://scenes/HealthComponent.tscn" id="7_3xmlx"]
+[ext_resource type="PackedScene" uid="uid://dc4xfsgjukcbm" path="res://scenes/hitboxComponent.tscn" id="6_devl0"]
+[ext_resource type="PackedScene" uid="uid://bwdbnj13eriax" path="res://scenes/healthComponent.tscn" id="7_3xmlx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_83wq4"]
 atlas = ExtResource("2_4keos")

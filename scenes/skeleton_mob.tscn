@@ -1,11 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://u2yux0dsh0gp"]
+[gd_scene load_steps=19 format=3 uid="uid://cecs6qhlrb7t"]
 
 [ext_resource type="Script" path="res://scripts/skeleton_mob.gd" id="1_hfjha"]
-[ext_resource type="PackedScene" uid="uid://dc4xfsgjukcbm" path="res://scenes/HitboxComponent.tscn" id="1_qe036"]
-[ext_resource type="PackedScene" uid="uid://bwdbnj13eriax" path="res://scenes/HealthComponent.tscn" id="2_f3mgj"]
+[ext_resource type="PackedScene" uid="uid://dc4xfsgjukcbm" path="res://scenes/hitboxComponent.tscn" id="1_qe036"]
+[ext_resource type="PackedScene" uid="uid://bwdbnj13eriax" path="res://scenes/healthComponent.tscn" id="2_f3mgj"]
 [ext_resource type="PackedScene" uid="uid://24q08luwhx6e" path="res://scenes/damageComponent.tscn" id="2_xgmoe"]
 [ext_resource type="Texture2D" uid="uid://cirkfny827a83" path="res://assets/sprites/skleton.png" id="6_wxyan"]
-[ext_resource type="Script" path="res://scripts/animated_sprite_skeleton.gd" id="7_fg5rt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aksd0"]
 size = Vector2(21, 25)
@@ -125,7 +124,7 @@ shape = SubResource("RectangleShape2D_3j0wx")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rvmw2")
 animation = &"attack"
-script = ExtResource("7_fg5rt")
 
+[connection signal="skeleton_attack" from="DamageComponent" to="." method="_on_damage_component_skeleton_attack"]
 [connection signal="area_entered" from="HitboxComponent" to="DamageComponent" method="_on_hitbox_component_area_entered"]
 [connection signal="area_exited" from="HitboxComponent" to="DamageComponent" method="_on_hitbox_component_area_exited"]
