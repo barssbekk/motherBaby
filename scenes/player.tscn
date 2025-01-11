@@ -417,7 +417,6 @@ script = ExtResource("1_oy3nk")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 5
 position = Vector2(0, -1)
-scale = Vector2(0.755371, 0.755371)
 sprite_frames = SubResource("SpriteFrames_gklh0")
 animation = &"birth"
 autoplay = "idle"

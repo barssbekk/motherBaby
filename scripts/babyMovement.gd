@@ -26,3 +26,6 @@ func _physics_process(delta: float) -> void:
 		#if %mamaSprite.animation != "Idle": %mamaSprite.animation = "Idle"
 		
 	move_and_slide()
+
+func die():
+	queue_free()
