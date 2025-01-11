@@ -10,17 +10,16 @@ func _physics_process(delta: float) -> void:
 	var distance = global_position.distance_to(player.global_position)
 	
 	# Handle chasing and movement 
-	if distance < 110 and distance > 2: # Chasing distance 
+	if distance < 130 and distance > 2: # Chasing distance 
 		if not is_chasing:
 			is_chasing = true
 			print("Player detected!")
 			animated_sprite.play("walk")
-		velocity = direction * 30
+		velocity = direction * 40
 	else: 
 		if is_chasing: 
 			is_chasing = false
 			print("Player out the range")
-			$AnimatedSprite2D.play("idle")
 		velocity = Vector2.ZERO
 	
 	if velocity.x > 0 and distance > 2: 
@@ -42,7 +41,3 @@ func die():
 
 func _on_damage_component_skeleton_attack() -> void:
 	animated_sprite.play("attack")
-
-
-func _on_hitbox_component_area_exited(area: Area2D) -> void:
-	pass # Replace with function body.

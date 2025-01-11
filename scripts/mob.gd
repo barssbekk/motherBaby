@@ -15,7 +15,7 @@ func _physics_process(delta: float) -> void:
 			is_chasing = true
 			print("Player detected!")
 			animated_sprite.play("walk_angry")
-		velocity = direction * 60
+		velocity = direction * 40
 	else: 
 		if is_chasing: 
 			is_chasing = false
