@@ -1,8 +1,8 @@
 [gd_scene load_steps=19 format=3 uid="uid://cecs6qhlrb7t"]
 
 [ext_resource type="Script" path="res://scripts/skeleton_mob.gd" id="1_hfjha"]
-[ext_resource type="PackedScene" uid="uid://dc4xfsgjukcbm" path="res://scenes/hitboxComponent.tscn" id="1_qe036"]
-[ext_resource type="PackedScene" uid="uid://bwdbnj13eriax" path="res://scenes/healthComponent.tscn" id="2_f3mgj"]
+[ext_resource type="PackedScene" uid="uid://dc4xfsgjukcbm" path="res://scenes/HitboxComponent.tscn" id="1_qe036"]
+[ext_resource type="PackedScene" uid="uid://bwdbnj13eriax" path="res://scenes/HealthComponent.tscn" id="2_f3mgj"]
 [ext_resource type="PackedScene" uid="uid://24q08luwhx6e" path="res://scenes/damageComponent.tscn" id="2_xgmoe"]
 [ext_resource type="Texture2D" uid="uid://cirkfny827a83" path="res://assets/sprites/skleton.png" id="6_wxyan"]
 
@@ -102,10 +102,9 @@ script = ExtResource("1_hfjha")
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_f3mgj")]
 
-[node name="DamageComponent" parent="." node_paths=PackedStringArray("animated_sprite") instance=ExtResource("2_xgmoe")]
+[node name="DamageComponent" parent="." instance=ExtResource("2_xgmoe")]
 new_attack_damage = 6
 max_attacks = 5
-animated_sprite = NodePath("../AnimatedSprite2D")
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("1_qe036")]
 collision_layer = 4

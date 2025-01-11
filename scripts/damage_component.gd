@@ -2,7 +2,6 @@ extends Node2D
 
 @export var new_attack_damage := 3
 @export var max_attacks := 10 #maximum amount of attacks if you stay in range
-@export var animated_sprite : animatedSprite
 var attacks_left := 10 #attacks you can make in current interaction
 signal skeleton_attack
 

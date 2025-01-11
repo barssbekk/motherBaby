@@ -1,7 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://dsofert8nw1g4"]
+[gd_scene load_steps=13 format=3 uid="uid://mk6ickoj44vh"]
 
 [ext_resource type="Texture2D" uid="uid://cirkfny827a83" path="res://assets/sprites/skleton.png" id="1_pakou"]
-[ext_resource type="Script" path="res://scripts/animated_sprite_skeleton.gd" id="2_ng87l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a0rj2"]
 atlas = ExtResource("1_pakou")
@@ -93,4 +92,3 @@ sprite_frames = SubResource("SpriteFrames_c2skv")
 animation = &"attack"
 frame = 2
 frame_progress = 0.684246
-script = ExtResource("2_ng87l")
