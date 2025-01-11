@@ -1,0 +1,165 @@
+[gd_scene load_steps=15 format=3 uid="uid://vfpnf8mwrby6"]
+
+[ext_resource type="Texture2D" uid="uid://b7cg3vi2v2rio" path="res://assets/sprites/ui/Sprite sheets/Sprite sheet for Basic Pack.png" id="1_5jjhh"]
+[ext_resource type="FontFile" uid="uid://w71llr8o8xqg" path="res://assets/fonts/MegamaxJonathanToo-YqOq2.ttf" id="2_1ycau"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_10sio"]
+texture = ExtResource("1_5jjhh")
+region_rect = Rect2(805, 70, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jndxj"]
+texture = ExtResource("1_5jjhh")
+region_rect = Rect2(805, 68, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_abc1k"]
+texture = ExtResource("1_5jjhh")
+region_rect = Rect2(773, 68, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7pbww"]
+texture = ExtResource("1_5jjhh")
+region_rect = Rect2(741, 166, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7eo7t"]
+texture = ExtResource("1_5jjhh")
+region_rect = Rect2(741, 164, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4fpl8"]
+texture = ExtResource("1_5jjhh")
+region_rect = Rect2(709, 164, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c8pbu"]
+texture = ExtResource("1_5jjhh")
+region_rect = Rect2(677, 70, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xkh5r"]
+texture = ExtResource("1_5jjhh")
+region_rect = Rect2(677, 67, 22, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_txaj1"]
+texture = ExtResource("1_5jjhh")
+region_rect = Rect2(645, 68, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l5w2y"]
+texture = ExtResource("1_5jjhh")
+region_rect = Rect2(741, 166, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nploe"]
+texture = ExtResource("1_5jjhh")
+region_rect = Rect2(741, 163, 22, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q73mg"]
+texture = ExtResource("1_5jjhh")
+region_rect = Rect2(772, 163, 22, 24)
+
+[node name="pauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="popupMenu" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="popupMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="popupMenu/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="NinePatchRect" type="NinePatchRect" parent="popupMenu/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(100, 150)
+layout_mode = 2
+texture = ExtResource("1_5jjhh")
+region_rect = Rect2(741, 38, 22, 22)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="popupMenu/VBoxContainer/MarginContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
+
+[node name="textContainer" type="VBoxContainer" parent="popupMenu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="popupMenu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/textContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1ycau")
+theme_override_font_sizes/font_size = 11
+text = "Stage 1"
+
+[node name="Label2" type="Label" parent="popupMenu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/textContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1ycau")
+theme_override_font_sizes/font_size = 11
+text = "HP:
+DMG:
+Kills:"
+
+[node name="buttonContainer" type="VBoxContainer" parent="popupMenu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="popupMenu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/buttonContainer"]
+layout_mode = 2
+
+[node name="mainMenuButton" type="Button" parent="popupMenu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/buttonContainer/HBoxContainer"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/hover = SubResource("StyleBoxTexture_10sio")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jndxj")
+theme_override_styles/normal = SubResource("StyleBoxTexture_abc1k")
+
+[node name="helpButton" type="Button" parent="popupMenu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/buttonContainer/HBoxContainer"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/hover = SubResource("StyleBoxTexture_7pbww")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7eo7t")
+theme_override_styles/normal = SubResource("StyleBoxTexture_4fpl8")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="popupMenu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/buttonContainer"]
+layout_mode = 2
+
+[node name="settingsButton" type="Button" parent="popupMenu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/buttonContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/hover = SubResource("StyleBoxTexture_c8pbu")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_xkh5r")
+theme_override_styles/normal = SubResource("StyleBoxTexture_txaj1")
+
+[node name="exitButton" type="Button" parent="popupMenu/VBoxContainer/MarginContainer/NinePatchRect/MarginContainer/buttonContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/hover = SubResource("StyleBoxTexture_l5w2y")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nploe")
+theme_override_styles/normal = SubResource("StyleBoxTexture_q73mg")
