@@ -267,5 +267,7 @@ position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_w01pp")
 
 [connection signal="skeleton_attack" from="DamageComponent" to="." method="_on_damage_component_skeleton_attack"]
+[connection signal="area_entered" from="HitboxComponent" to="DamageComponent" method="_on_hitbox_component_area_entered"]
+[connection signal="area_exited" from="HitboxComponent" to="DamageComponent" method="_on_hitbox_component_area_exited"]
 [connection signal="body_entered" from="HitboxComponent" to="." method="_on_hitbox_component_body_entered"]
 [connection signal="body_entered" from="HitboxComponent" to="DamageComponent" method="_on_hitbox_component_body_entered"]

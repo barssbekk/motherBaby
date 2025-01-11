@@ -304,11 +304,6 @@ position = Vector2(-4.76837e-07, 0)
 scale = Vector2(0.748071, 0.68852)
 zoom = Vector2(1.5, 1.5)
 
-[node name="Mob" parent="." instance=ExtResource("5_6v7r2")]
-z_index = 5
-position = Vector2(-73, -200)
-collision_mask = 2
-
 [node name="Baby" parent="." instance=ExtResource("2_2kw0m")]
 z_index = 3
 position = Vector2(29, -44)
@@ -341,4 +336,61 @@ position = Vector2(361, -255)
 [node name="UI" parent="." instance=ExtResource("4_vymbv")]
 
 [node name="cyclop" parent="." instance=ExtResource("7_faand")]
-position = Vector2(18, -113)
+position = Vector2(359, 65)
+
+[node name="bats" type="Node" parent="."]
+
+[node name="Mob" parent="bats" instance=ExtResource("5_6v7r2")]
+z_index = 5
+position = Vector2(-67, -228)
+collision_mask = 2
+
+[node name="Mob3" parent="bats" instance=ExtResource("5_6v7r2")]
+z_index = 5
+position = Vector2(-67, -228)
+collision_mask = 2
+
+[node name="Mob4" parent="bats" instance=ExtResource("5_6v7r2")]
+z_index = 5
+position = Vector2(-67, -228)
+collision_mask = 2
+
+[node name="Mob5" parent="bats" instance=ExtResource("5_6v7r2")]
+z_index = 5
+position = Vector2(-67, -228)
+collision_mask = 2
+
+[node name="Mob6" parent="bats" instance=ExtResource("5_6v7r2")]
+z_index = 5
+position = Vector2(-131, -197)
+collision_mask = 2
+
+[node name="Mob7" parent="bats" instance=ExtResource("5_6v7r2")]
+z_index = 5
+position = Vector2(-192, 0)
+collision_mask = 2
+
+[node name="Mob8" parent="bats" instance=ExtResource("5_6v7r2")]
+z_index = 5
+position = Vector2(-294, -66)
+collision_mask = 2
+
+[node name="Mob9" parent="bats" instance=ExtResource("5_6v7r2")]
+z_index = 5
+position = Vector2(-235, -140)
+collision_mask = 2
+
+[node name="Mob10" parent="bats" instance=ExtResource("5_6v7r2")]
+z_index = 5
+position = Vector2(-95, -308)
+collision_mask = 2
+
+[node name="Mob11" parent="bats" instance=ExtResource("5_6v7r2")]
+z_index = 5
+position = Vector2(-215, -218)
+collision_mask = 2
+
+[node name="Mob2" parent="bats" instance=ExtResource("5_6v7r2")]
+z_index = 5
+position = Vector2(-119, -242)
+collision_mask = 2

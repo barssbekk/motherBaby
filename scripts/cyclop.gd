@@ -10,7 +10,7 @@ func _physics_process(delta: float) -> void:
 	var distance = global_position.distance_to(player.global_position)
 	
 	# Handle chasing and movement 
-	if distance < 130 and distance > 2: # Chasing distance 
+	if distance < 100 and distance > 2: # Chasing distance 
 		if not is_chasing:
 			is_chasing = true
 			print("Player detected!")
@@ -20,6 +20,7 @@ func _physics_process(delta: float) -> void:
 		if is_chasing: 
 			is_chasing = false
 			print("Player out the range")
+			animated_sprite.play("idle")
 		velocity = Vector2.ZERO
 	
 	if velocity.x > 0 and distance > 2: 

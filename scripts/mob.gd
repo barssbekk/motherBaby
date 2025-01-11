@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var player = get_node("/root/Game/Player")
-@onready var animated_sprite = $bat/AnimatedSprite2D
+@onready var animated_sprite = $AnimatedSprite2D
 var is_chasing = false
 
 func _physics_process(delta: float) -> void:
