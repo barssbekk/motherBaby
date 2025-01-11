@@ -4,8 +4,6 @@ class_name HealthComponent
 @export var max_Health := 3
 var current_Health : float
 
-
-
 #Take damage and call death function when health reaches 0
 func damage(attack: Attack):
 	var is_critical := false

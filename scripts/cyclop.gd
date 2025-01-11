@@ -10,11 +10,11 @@ func _physics_process(delta: float) -> void:
 	var distance = global_position.distance_to(player.global_position)
 	
 	# Handle chasing and movement 
-	if distance < 130 and distance > 2: # Chasing distance 
+	if distance < 100 and distance > 2: # Chasing distance 
 		if not is_chasing:
 			is_chasing = true
 			print("Player detected!")
-			animated_sprite.play("walk_angry")
+			animated_sprite.play("walk")
 		velocity = direction * 40
 	else: 
 		if is_chasing: 
@@ -38,3 +38,7 @@ func _physics_process(delta: float) -> void:
 #Death Function called when health = 0
 func die():
 	queue_free()
+
+
+func _on_damage_component_skeleton_attack() -> void:
+	animated_sprite.play("attack")

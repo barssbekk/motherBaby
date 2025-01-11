@@ -14,13 +14,12 @@ func _physics_process(delta: float) -> void:
 		if not is_chasing:
 			is_chasing = true
 			print("Player detected!")
-			animated_sprite.play("walk_angry")
+			animated_sprite.play("walk")
 		velocity = direction * 40
 	else: 
 		if is_chasing: 
 			is_chasing = false
 			print("Player out the range")
-			animated_sprite.play("idle")
 		velocity = Vector2.ZERO
 	
 	if velocity.x > 0 and distance > 2: 
@@ -38,3 +37,7 @@ func _physics_process(delta: float) -> void:
 #Death Function called when health = 0
 func die():
 	queue_free()
+
+
+func _on_damage_component_skeleton_attack() -> void:
+	animated_sprite.play("attack")

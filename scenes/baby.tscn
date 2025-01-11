@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bwdbnj13eriax" path="res://scenes/healthComponent.tscn" id="4_b0ypn"]
 [ext_resource type="PackedScene" uid="uid://dc4xfsgjukcbm" path="res://scenes/hitboxComponent.tscn" id="4_orrqr"]
 
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aicay"]
 size = Vector2(5, 10)
 
