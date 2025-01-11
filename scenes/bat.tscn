@@ -144,7 +144,7 @@ script = ExtResource("1_hpmyh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mb5hf")
-animation = &"walk_angry"
+animation = &"hurt"
 autoplay = "idle"
-frame = 2
-frame_progress = 0.349715
+frame = 1
+frame_progress = 0.394411

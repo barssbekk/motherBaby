@@ -1,0 +1,96 @@
+[gd_scene load_steps=14 format=3 uid="uid://dsofert8nw1g4"]
+
+[ext_resource type="Texture2D" uid="uid://cirkfny827a83" path="res://assets/sprites/skleton.png" id="1_pakou"]
+[ext_resource type="Script" path="res://scripts/animated_sprite_skeleton.gd" id="2_ng87l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0rj2"]
+atlas = ExtResource("1_pakou")
+region = Rect2(0, 0, 42, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rux52"]
+atlas = ExtResource("1_pakou")
+region = Rect2(42, 0, 42, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6x6o"]
+atlas = ExtResource("1_pakou")
+region = Rect2(84, 0, 42, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_652x0"]
+atlas = ExtResource("1_pakou")
+region = Rect2(126, 0, 42, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwrav"]
+atlas = ExtResource("1_pakou")
+region = Rect2(0, 32, 42, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqg5q"]
+atlas = ExtResource("1_pakou")
+region = Rect2(42, 32, 42, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31y70"]
+atlas = ExtResource("1_pakou")
+region = Rect2(84, 32, 42, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsby5"]
+atlas = ExtResource("1_pakou")
+region = Rect2(126, 32, 42, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ophwd"]
+atlas = ExtResource("1_pakou")
+region = Rect2(168, 32, 42, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fw60i"]
+atlas = ExtResource("1_pakou")
+region = Rect2(210, 32, 42, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c2skv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a0rj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rux52")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6x6o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_652x0")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwrav")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqg5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31y70")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qsby5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ophwd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fw60i")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="skeleton" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_c2skv")
+animation = &"attack"
+frame = 2
+frame_progress = 0.684246
+script = ExtResource("2_ng87l")

@@ -1,0 +1,131 @@
+[gd_scene load_steps=20 format=3 uid="uid://u2yux0dsh0gp"]
+
+[ext_resource type="Script" path="res://scripts/skeleton_mob.gd" id="1_hfjha"]
+[ext_resource type="PackedScene" uid="uid://dc4xfsgjukcbm" path="res://scenes/HitboxComponent.tscn" id="1_qe036"]
+[ext_resource type="PackedScene" uid="uid://bwdbnj13eriax" path="res://scenes/HealthComponent.tscn" id="2_f3mgj"]
+[ext_resource type="PackedScene" uid="uid://24q08luwhx6e" path="res://scenes/damageComponent.tscn" id="2_xgmoe"]
+[ext_resource type="Texture2D" uid="uid://cirkfny827a83" path="res://assets/sprites/skleton.png" id="6_wxyan"]
+[ext_resource type="Script" path="res://scripts/animated_sprite_skeleton.gd" id="7_fg5rt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aksd0"]
+size = Vector2(21, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3j0wx"]
+size = Vector2(21, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0rj2"]
+atlas = ExtResource("6_wxyan")
+region = Rect2(0, 0, 42, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rux52"]
+atlas = ExtResource("6_wxyan")
+region = Rect2(42, 0, 42, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6x6o"]
+atlas = ExtResource("6_wxyan")
+region = Rect2(84, 0, 42, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_652x0"]
+atlas = ExtResource("6_wxyan")
+region = Rect2(126, 0, 42, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwrav"]
+atlas = ExtResource("6_wxyan")
+region = Rect2(0, 32, 42, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqg5q"]
+atlas = ExtResource("6_wxyan")
+region = Rect2(42, 32, 42, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31y70"]
+atlas = ExtResource("6_wxyan")
+region = Rect2(84, 32, 42, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsby5"]
+atlas = ExtResource("6_wxyan")
+region = Rect2(126, 32, 42, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ophwd"]
+atlas = ExtResource("6_wxyan")
+region = Rect2(168, 32, 42, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fw60i"]
+atlas = ExtResource("6_wxyan")
+region = Rect2(210, 32, 42, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rvmw2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a0rj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rux52")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6x6o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_652x0")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwrav")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqg5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31y70")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qsby5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ophwd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fw60i")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="skeleton_mob" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_hfjha")
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_f3mgj")]
+
+[node name="DamageComponent" parent="." node_paths=PackedStringArray("animated_sprite") instance=ExtResource("2_xgmoe")]
+new_attack_damage = 6
+max_attacks = 5
+animated_sprite = NodePath("../AnimatedSprite2D")
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("1_qe036")]
+collision_layer = 4
+collision_mask = 3
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(2.5, 4.5)
+shape = SubResource("RectangleShape2D_aksd0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(2.5, 4.5)
+shape = SubResource("RectangleShape2D_3j0wx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rvmw2")
+animation = &"attack"
+script = ExtResource("7_fg5rt")
+
+[connection signal="area_entered" from="HitboxComponent" to="DamageComponent" method="_on_hitbox_component_area_entered"]
+[connection signal="area_exited" from="HitboxComponent" to="DamageComponent" method="_on_hitbox_component_area_exited"]
