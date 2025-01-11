@@ -8,7 +8,9 @@ var current_Health : float
 
 #Take damage and call death function when health reaches 0
 func damage(attack: Attack):
+	var is_critical := false
 	current_Health -= attack.attack_damage
+	DamageNumbers.display_number(attack.attack_damage, self.global_position, is_critical)
 	print(get_parent().name + " was hit!")
 	if current_Health <= 0:
 		if get_parent().has_method("die"):

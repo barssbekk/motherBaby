@@ -26,9 +26,10 @@ rotation = -1.5708
 shape = SubResource("CapsuleShape2D_8a00q")
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_l22xe")]
-max_Health = 1
+max_Health = 5
 
 [node name="damage_component" parent="." instance=ExtResource("5_awbk0")]
+new_attack_damage = 1
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("2_ser45")]
 collision_layer = 4
