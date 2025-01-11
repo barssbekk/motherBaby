@@ -252,6 +252,8 @@ frame_progress = 0.873868
 max_Health = 10
 
 [node name="DamageComponent" parent="." instance=ExtResource("6_56irx")]
+new_attack_damage = 6
+max_attacks = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.75)
@@ -267,5 +269,7 @@ position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_w01pp")
 
 [connection signal="skeleton_attack" from="DamageComponent" to="." method="_on_damage_component_skeleton_attack"]
+[connection signal="area_entered" from="HitboxComponent" to="DamageComponent" method="_on_hitbox_component_area_entered"]
+[connection signal="area_exited" from="HitboxComponent" to="." method="_on_hitbox_component_area_exited"]
 [connection signal="body_entered" from="HitboxComponent" to="." method="_on_hitbox_component_body_entered"]
 [connection signal="body_entered" from="HitboxComponent" to="DamageComponent" method="_on_hitbox_component_body_entered"]

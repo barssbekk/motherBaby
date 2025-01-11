@@ -341,4 +341,4 @@ position = Vector2(361, -255)
 [node name="UI" parent="." instance=ExtResource("4_vymbv")]
 
 [node name="cyclop" parent="." instance=ExtResource("7_faand")]
-position = Vector2(18, -113)
+position = Vector2(358, 60)
