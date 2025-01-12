@@ -3,9 +3,8 @@
 [ext_resource type="Script" path="res://scripts/babyMovement.gd" id="1_sjrgl"]
 [ext_resource type="Texture2D" uid="uid://bplnrh7j6k0ug" path="res://assets/sprites/BabehAnims.png" id="2_f4uj0"]
 [ext_resource type="PackedScene" uid="uid://24q08luwhx6e" path="res://scenes/damageComponent.tscn" id="3_sw05m"]
-[ext_resource type="PackedScene" uid="uid://bwdbnj13eriax" path="res://scenes/healthComponent.tscn" id="4_b0ypn"]
-[ext_resource type="PackedScene" uid="uid://dc4xfsgjukcbm" path="res://scenes/hitboxComponent.tscn" id="4_orrqr"]
-
+[ext_resource type="PackedScene" uid="uid://bwdbnj13eriax" path="res://scenes/HealthComponent.tscn" id="4_b0ypn"]
+[ext_resource type="PackedScene" uid="uid://dc4xfsgjukcbm" path="res://scenes/HitboxComponent.tscn" id="4_orrqr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aicay"]
 size = Vector2(5, 10)
