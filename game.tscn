@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=4 uid="uid://d12xnn6slwj61"]
+[gd_scene load_steps=11 format=4 uid="uid://d12xnn6slwj61"]
 
 [ext_resource type="PackedScene" uid="uid://cpijbgtfhbkqm" path="res://scenes/player.tscn" id="1_1iqdn"]
 [ext_resource type="PackedScene" uid="uid://d26vwd4g3x0x8" path="res://scenes/baby.tscn" id="2_2kw0m"]
+[ext_resource type="PackedScene" uid="uid://fsbt5n1jq4op" path="res://scenes/ghost.tscn" id="2_h1rdq"]
 [ext_resource type="Texture2D" uid="uid://bnek1nseml03" path="res://assets/sprites/Ws.png" id="3_cshby"]
 [ext_resource type="PackedScene" uid="uid://cjd54imge5fr" path="res://scenes/ui.tscn" id="4_vymbv"]
 [ext_resource type="PackedScene" uid="uid://f16y3mfyq1bv" path="res://scenes/mob.tscn" id="5_6v7r2"]
@@ -397,3 +398,6 @@ collision_mask = 2
 z_index = 5
 position = Vector2(-119, -242)
 collision_mask = 2
+
+[node name="ghost" parent="." instance=ExtResource("2_h1rdq")]
+position = Vector2(103, 42)
