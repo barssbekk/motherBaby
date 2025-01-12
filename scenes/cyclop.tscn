@@ -252,6 +252,7 @@ frame_progress = 0.873868
 max_Health = 10
 
 [node name="DamageComponent" parent="." instance=ExtResource("6_56irx")]
+attack_speed = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 0.75)
