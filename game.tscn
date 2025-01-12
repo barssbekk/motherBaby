@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://d12xnn6slwj61"]
+[gd_scene load_steps=14 format=4 uid="uid://d12xnn6slwj61"]
 
 [ext_resource type="PackedScene" uid="uid://cpijbgtfhbkqm" path="res://scenes/player.tscn" id="1_1iqdn"]
 [ext_resource type="PackedScene" uid="uid://d26vwd4g3x0x8" path="res://scenes/babyPointer.tscn" id="2_2kw0m"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ckggyrcdjdxjm" path="res://scenes/skeletonSpawner.tscn" id="9_om1id"]
 [ext_resource type="PackedScene" uid="uid://cjadqtvekmslw" path="res://scenes/ghostSpawner.tscn" id="10_fsv27"]
 [ext_resource type="PackedScene" uid="uid://dj8lp2gl7j0oo" path="res://scenes/mobSpawner.tscn" id="10_lqen3"]
+[ext_resource type="PackedScene" uid="uid://dgdvyj78shwhr" path="res://scenes/mama_tear_upgrade.tscn" id="11_tid41"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mcu5c"]
 texture = ExtResource("3_cshby")
@@ -339,3 +340,6 @@ position = Vector2(-116, -94)
 position = Vector2(-116, -56)
 
 [node name="ghostSpawner" parent="." instance=ExtResource("10_fsv27")]
+
+[node name="mamaTearUpgrade" parent="." instance=ExtResource("11_tid41")]
+position = Vector2(55, -117)

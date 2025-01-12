@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://cpijbgtfhbkqm"]
+[gd_scene load_steps=65 format=3 uid="uid://cpijbgtfhbkqm"]
 
 [ext_resource type="Script" path="res://scripts/playerMovement.gd" id="1_oy3nk"]
 [ext_resource type="Texture2D" uid="uid://dfyfj6546x60m" path="res://assets/sprites/MotherBirthAnims.png" id="2_4keos"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d4ea5agow1vd0" path="res://assets/sprites/MotherRunAnims.png" id="3_26h0w"]
 [ext_resource type="PackedScene" uid="uid://dc4xfsgjukcbm" path="res://scenes/hitboxComponent.tscn" id="6_devl0"]
 [ext_resource type="PackedScene" uid="uid://bwdbnj13eriax" path="res://scenes/healthComponent.tscn" id="7_3xmlx"]
+[ext_resource type="PackedScene" uid="uid://24q08luwhx6e" path="res://scenes/damageComponent.tscn" id="8_fpj6l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_83wq4"]
 atlas = ExtResource("2_4keos")
@@ -429,7 +430,7 @@ shape = SubResource("CapsuleShape2D_8br6c")
 max_Health = 1
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("6_devl0")]
-collision_mask = 5
+collision_mask = 13
 health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
@@ -440,4 +441,14 @@ shape = SubResource("CapsuleShape2D_tqoir")
 wait_time = 5.0
 autostart = true
 
+[node name="mamaTearTimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="DamageComponent" parent="." instance=ExtResource("8_fpj6l")]
+new_attack_damage = 1
+
+[connection signal="area_entered" from="HitboxComponent" to="." method="mama_tear_upgrade_pickup"]
+[connection signal="area_entered" from="HitboxComponent" to="DamageComponent" method="_on_hitbox_component_area_entered"]
+[connection signal="area_exited" from="HitboxComponent" to="DamageComponent" method="_on_hitbox_component_area_exited"]
 [connection signal="timeout" from="birthBabyTimer" to="." method="birth_baby"]
+[connection signal="timeout" from="mamaTearTimer" to="." method="mama_tear_upgrade"]

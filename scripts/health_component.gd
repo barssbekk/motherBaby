@@ -8,7 +8,8 @@ var current_Health : float
 func damage(attack: Attack):
 	var is_critical := false
 	current_Health -= attack.attack_damage
-	DamageNumbers.display_number(attack.attack_damage, self.global_position, is_critical) #Calls dmg popup func in DamageNumbers singleton
+	if get_parent().name != "mamaTearUpgrade":
+		DamageNumbers.display_number(attack.attack_damage, self.global_position, is_critical) #Calls dmg popup func in DamageNumbers singleton
 	#print(get_parent().name + " was hit!")
 	if current_Health <= 0:
 		if get_parent().has_method("die"):

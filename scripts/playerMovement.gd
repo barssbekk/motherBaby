@@ -4,10 +4,13 @@ extends CharacterBody2D
 var character_direction: Vector2
 var is_born = false  # For birth animation
 var baby_scene = preload("res://scenes/baby2.tscn")
+var mama_tear_scene = preload("res://scenes/mamaTear.tscn")
+@onready var mama_tear_timer = $mamaTearTimer
 
 func _ready() -> void:
 	$AnimatedSprite2D.play("birth")  # Start birth animation
 	$AnimatedSprite2D.connect("animation_finished", Callable(self, "_on_animation_finished"))
+
 
 func _physics_process(delta: float) -> void:
 	if not is_born:
@@ -70,3 +73,17 @@ func birth_baby():
 	add_child(babyinstance)
 	babyinstance.top_level = true
 	babyinstance.position = spawn_position
+
+
+func mama_tear_upgrade():
+	var tearinstance = mama_tear_scene.instantiate()
+	var spawn_position := self.position
+	add_child(tearinstance)
+	tearinstance.top_level = true
+	tearinstance.position = spawn_position
+
+
+func mama_tear_upgrade_pickup(area):
+	if area.get_parent().name == "mamaTearUpgrade":
+		mama_tear_timer.start()
+		print("MAMA TEAR UPGRADE GOT")

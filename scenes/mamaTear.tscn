@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://dhgglryjp020u"]
+
+[ext_resource type="Script" path="res://scenes/bullet.gd" id="1_5uclv"]
+[ext_resource type="PackedScene" uid="uid://24q08luwhx6e" path="res://scenes/damageComponent.tscn" id="2_7jxuf"]
+[ext_resource type="Texture2D" uid="uid://bnek1nseml03" path="res://assets/sprites/Ws.png" id="2_llhig"]
+[ext_resource type="PackedScene" uid="uid://dc4xfsgjukcbm" path="res://scenes/hitboxComponent.tscn" id="4_2krhh"]
+[ext_resource type="PackedScene" uid="uid://bwdbnj13eriax" path="res://scenes/healthComponent.tscn" id="5_52lxr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ft2j3"]
+atlas = ExtResource("2_llhig")
+region = Rect2(72, 264, 32, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e0fo6"]
+radius = 8.0
+
+[node name="mama_tear" type="Node2D"]
+script = ExtResource("1_5uclv")
+
+[node name="DamageComponent" parent="." instance=ExtResource("2_7jxuf")]
+new_attack_damage = 5
+max_attacks = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_ft2j3")
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_2krhh")]
+collision_layer = 2
+collision_mask = 4
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("CircleShape2D_e0fo6")
+
+[node name="HealthComponent" parent="." instance=ExtResource("5_52lxr")]
+max_Health = 1
+
+[connection signal="area_entered" from="HitboxComponent" to="DamageComponent" method="_on_hitbox_component_area_entered"]
+[connection signal="area_exited" from="HitboxComponent" to="DamageComponent" method="_on_hitbox_component_area_exited"]

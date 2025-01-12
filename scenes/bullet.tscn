@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://cp872b2a1tvlp"]
+
+[ext_resource type="Script" path="res://scenes/bullet.gd" id="1_kr6di"]
+[ext_resource type="Texture2D" uid="uid://bnek1nseml03" path="res://assets/sprites/Ws.png" id="2_74mum"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ft2j3"]
+atlas = ExtResource("2_74mum")
+region = Rect2(72, 264, 32, 32)
+
+[node name="bullet" type="Node2D"]
+script = ExtResource("1_kr6di")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_ft2j3")
