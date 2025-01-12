@@ -194,6 +194,7 @@ animation = &"attack"
 max_Health = 2
 
 [node name="DamageComponent" parent="." instance=ExtResource("2_nhb6r")]
+new_attack_damage = 6
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_t7n6w")]
 collision_layer = 4

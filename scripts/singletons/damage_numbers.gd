@@ -13,6 +13,10 @@ func display_number(value: int, position : Vector2, is_critical: bool = false):
 		color = "#D72638"
 	if value == 0:
 		color = "#FFF8"
+	if value >= 2 and value < 4:
+		color = "F46036"
+	if value >= 6:
+		color = "D72638"
 	
 	var font := preload("res://assets/fonts/MegamaxJonathanToo-YqOq2.ttf")
 	number.label_settings.font = font

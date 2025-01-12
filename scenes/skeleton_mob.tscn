@@ -104,7 +104,6 @@ script = ExtResource("1_hfjha")
 
 [node name="DamageComponent" parent="." instance=ExtResource("2_xgmoe")]
 attack_speed = 1.5
-new_attack_damage = 6
 max_attacks = 5
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("1_qe036")]

@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var movement_speed: float = 70
 var character_direction: Vector2
 var is_born = false  # For birth animation
+var baby_scene = preload("res://scenes/baby2.tscn")
 
 func _ready() -> void:
 	$AnimatedSprite2D.play("birth")  # Start birth animation
@@ -61,3 +62,11 @@ func _on_restart_timer_finished():
 # Restart the current scene
 func restart_game():
 	get_tree().reload_current_scene()
+	
+
+func birth_baby():
+	var babyinstance = baby_scene.instantiate()
+	var spawn_position := self.position
+	add_child(babyinstance)
+	babyinstance.top_level = true
+	babyinstance.position = spawn_position

@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
 @export var baby : CharacterBody2D
-@export var movement_speed : float = 80
+@export var movement_speed : float = Stats.babyspeed
 var pointer : CharacterBody2D
+
 
 func _ready() -> void:
 	pointer = get_tree().get_first_node_in_group("BabyPointer")

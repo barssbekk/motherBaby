@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 DamageNumbers="*res://scenes/singletons/damageNumbers.tscn"
+Stats="*res://scripts/singletons/Stats.gd"
 
 [display]
 
