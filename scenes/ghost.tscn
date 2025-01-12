@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cknks1ogn8r5d" path="res://assets/sprites/Ghost_Attack_Anim.png" id="1_q6t0d"]
 [ext_resource type="Texture2D" uid="uid://beaa335xyyyis" path="res://assets/sprites/Ghost_Idle_And_Walk_Anims.png" id="2_lvlbt"]
 [ext_resource type="PackedScene" uid="uid://24q08luwhx6e" path="res://scenes/damageComponent.tscn" id="2_nhb6r"]
-[ext_resource type="PackedScene" uid="uid://bwdbnj13eriax" path="res://scenes/HealthComponent.tscn" id="3_nsnx0"]
-[ext_resource type="PackedScene" uid="uid://dc4xfsgjukcbm" path="res://scenes/HitboxComponent.tscn" id="4_t7n6w"]
+[ext_resource type="PackedScene" uid="uid://bwdbnj13eriax" path="res://scenes/healthComponent.tscn" id="3_nsnx0"]
+[ext_resource type="PackedScene" uid="uid://dc4xfsgjukcbm" path="res://scenes/hitboxComponent.tscn" id="4_t7n6w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7jdyc"]
 size = Vector2(30.8824, 36.7647)
@@ -186,7 +186,7 @@ shape = SubResource("RectangleShape2D_7jdyc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 5
-scale = Vector2(0.600002, 0.600002)
+scale = Vector2(0.64, 0.64)
 sprite_frames = SubResource("SpriteFrames_x5rxy")
 animation = &"attack"
 
