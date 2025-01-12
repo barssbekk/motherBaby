@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckggyrcdjdxjm"]
+
+[ext_resource type="Script" path="res://scripts/spawner.gd" id="1_otfbi"]
+[ext_resource type="Texture2D" uid="uid://dn45k10jvhsne" path="res://icon.svg" id="2_obbiw"]
+[ext_resource type="PackedScene" uid="uid://cecs6qhlrb7t" path="res://scenes/skeleton_mob.tscn" id="2_pkeah"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_m4634"]
+blend_mode = 2
+
+[node name="skeletonSpawner" type="Marker2D"]
+script = ExtResource("1_otfbi")
+mob_scene = ExtResource("2_pkeah")
+
+[node name="startSpawningTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="spawningSpeed" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[node name="spawningSpeedIncrease" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_m4634")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_obbiw")
+
+[connection signal="timeout" from="startSpawningTimer" to="." method="_on_start_spawning_timer_timeout"]
+[connection signal="timeout" from="spawningSpeed" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="spawningSpeedIncrease" to="." method="update_spawning_speed"]
