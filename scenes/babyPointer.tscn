@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://d26vwd4g3x0x8"]
+
+[ext_resource type="Script" path="res://scripts/babyMovement.gd" id="1_sjrgl"]
+[ext_resource type="Texture2D" uid="uid://bm6d1n8mkfuk1" path="res://assets/sprites/ui/pointer_i.png" id="2_sd2fq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aicay"]
+size = Vector2(10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1xgd"]
+atlas = ExtResource("2_sd2fq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hxlul"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1xgd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="BabyPointer" type="CharacterBody2D" groups=["BabyPointer"]]
+collision_layer = 2
+collision_mask = 7
+script = ExtResource("1_sjrgl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+top_level = true
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_aicay")
+disabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, 2)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_hxlul")
+autoplay = "default"
+frame_progress = 0.755518

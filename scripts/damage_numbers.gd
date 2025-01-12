@@ -28,9 +28,11 @@ func display_number(value: int, position : Vector2, is_critical: bool = false):
 	
 	var tween = get_tree().create_tween()  #Scale and movement animations
 	tween.set_parallel(true)
-	tween.tween_property(number, "position:y", number.position.y - 24, 0.25).set_ease(Tween.EASE_OUT)
-	tween.tween_property(number, "position:y", number.position.y, 0.5).set_ease(Tween.EASE_IN).set_delay(0.25)
-	tween.tween_property(number, "scale", Vector2.ZERO, 0.25).set_ease(Tween.EASE_IN).set_delay(0.5)
+	tween.tween_property(number, "position:y", number.position.y - 24, 0.25).set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_OUT)
+	tween.tween_property(number, "position:y", number.position.y, 0.5).set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_IN).set_delay(0.25)
+	tween.tween_property(number, "scale", Vector2.ZERO, 0.25).set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_IN).set_delay(0.5)
+	tween.tween_property(number, "position:x", number.position.x + 24, 1.5).set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_OUT)
+	
 	
 	await tween.finished
 	number.queue_free()

@@ -148,4 +148,3 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_mb5hf")
 animation = &"idle"
 autoplay = "idle"
-
