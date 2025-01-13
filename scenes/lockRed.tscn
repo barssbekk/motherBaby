@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://ca8itul2ohwjh"]
+
+[ext_resource type="Texture2D" uid="uid://bnek1nseml03" path="res://assets/sprites/Ws.png" id="1_63bmq"]
+[ext_resource type="Script" path="res://scripts/lock.gd" id="1_y4i6q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6w3yl"]
+atlas = ExtResource("1_63bmq")
+region = Rect2(304, 322, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqrrk"]
+atlas = ExtResource("1_63bmq")
+region = Rect2(144, 319, 16, 16)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dkrei"]
+radius = 7.0
+height = 22.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_85ju2"]
+size = Vector2(44, 16)
+
+[node name="lockRed" type="Node2D"]
+script = ExtResource("1_y4i6q")
+
+[node name="lockSprite" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_6w3yl")
+
+[node name="keySprite" type="Sprite2D" parent="."]
+position = Vector2(27, -427)
+texture = SubResource("AtlasTexture_eqrrk")
+
+[node name="keyPickupArea" type="Area2D" parent="."]
+collision_layer = 24
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="keyPickupArea"]
+position = Vector2(27, -427)
+shape = SubResource("CapsuleShape2D_dkrei")
+
+[node name="blockArea" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="blockArea"]
+position = Vector2(-14, -1)
+shape = SubResource("RectangleShape2D_85ju2")
+
+[connection signal="area_entered" from="keyPickupArea" to="." method="_on_area_2d_area_entered"]
