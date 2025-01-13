@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ckggyrcdjdxjm" path="res://scenes/skeletonSpawner.tscn" id="9_om1id"]
 [ext_resource type="PackedScene" uid="uid://cjadqtvekmslw" path="res://scenes/ghostSpawner.tscn" id="10_fsv27"]
 [ext_resource type="PackedScene" uid="uid://dj8lp2gl7j0oo" path="res://scenes/mobSpawner.tscn" id="10_lqen3"]
-[ext_resource type="PackedScene" uid="uid://dgdvyj78shwhr" path="res://scenes/mama_tear_upgrade.tscn" id="11_tid41"]
+[ext_resource type="PackedScene" path="res://scenes/mama_tear_upgrade.tscn" id="11_tid41"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mcu5c"]
 texture = ExtResource("3_cshby")

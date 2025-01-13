@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dgdvyj78shwhr"]
+[gd_scene load_steps=7 format=3 uid="uid://3iex3gbyekmd"]
 
 [ext_resource type="Script" path="res://scenes/mama_tear_upgrade.gd" id="1_dps5y"]
 [ext_resource type="Texture2D" uid="uid://bnek1nseml03" path="res://assets/sprites/Ws.png" id="1_ivq55"]
