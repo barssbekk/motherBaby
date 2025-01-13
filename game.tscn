@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://d12xnn6slwj61"]
+[gd_scene load_steps=17 format=4 uid="uid://d12xnn6slwj61"]
 
 [ext_resource type="PackedScene" uid="uid://cpijbgtfhbkqm" path="res://scenes/player.tscn" id="1_1iqdn"]
 [ext_resource type="PackedScene" uid="uid://d26vwd4g3x0x8" path="res://scenes/babyPointer.tscn" id="2_2kw0m"]
@@ -10,7 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://ckggyrcdjdxjm" path="res://scenes/skeletonSpawner.tscn" id="9_om1id"]
 [ext_resource type="PackedScene" uid="uid://cjadqtvekmslw" path="res://scenes/ghostSpawner.tscn" id="10_fsv27"]
 [ext_resource type="PackedScene" uid="uid://dj8lp2gl7j0oo" path="res://scenes/mobSpawner.tscn" id="10_lqen3"]
-[ext_resource type="PackedScene" path="res://scenes/mama_tear_upgrade.tscn" id="11_tid41"]
+[ext_resource type="PackedScene" uid="uid://3iex3gbyekmd" path="res://scenes/mama_tear_upgrade.tscn" id="11_tid41"]
+[ext_resource type="PackedScene" uid="uid://ca8itul2ohwjh" path="res://scenes/lockRed.tscn" id="12_bkbq3"]
+[ext_resource type="PackedScene" uid="uid://c3undegxrca3v" path="res://scenes/lockOrange.tscn" id="13_4orny"]
+[ext_resource type="PackedScene" uid="uid://bqx6sm68irkm5" path="res://scenes/lockYellow.tscn" id="14_rx7js"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mcu5c"]
 texture = ExtResource("3_cshby")
@@ -295,7 +298,7 @@ texture = ExtResource("3_cshby")
 10:12/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_qotdw"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 17
 sources/0 = SubResource("TileSetAtlasSource_mcu5c")
 
 [node name="Game" type="Node2D"]
@@ -328,7 +331,7 @@ tile_set = SubResource("TileSet_qotdw")
 [node name="UI" parent="." instance=ExtResource("4_vymbv")]
 
 [node name="cyclop" parent="." instance=ExtResource("7_faand")]
-position = Vector2(359, 65)
+position = Vector2(359, 70)
 
 [node name="ghost" parent="." instance=ExtResource("2_h1rdq")]
 position = Vector2(103, 42)
@@ -342,4 +345,13 @@ position = Vector2(-116, -56)
 [node name="ghostSpawner" parent="." instance=ExtResource("10_fsv27")]
 
 [node name="mamaTearUpgrade" parent="." instance=ExtResource("11_tid41")]
-position = Vector2(55, -117)
+position = Vector2(361, 39)
+
+[node name="lockRed" parent="." instance=ExtResource("12_bkbq3")]
+position = Vector2(376, 116)
+
+[node name="lockOrange" parent="." instance=ExtResource("13_4orny")]
+position = Vector2(360, 116)
+
+[node name="lockYellow" parent="." instance=ExtResource("14_rx7js")]
+position = Vector2(344, 116)

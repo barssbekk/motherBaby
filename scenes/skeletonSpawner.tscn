@@ -25,6 +25,7 @@ wait_time = 5.0
 autostart = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 material = SubResource("CanvasItemMaterial_m4634")
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_obbiw")
