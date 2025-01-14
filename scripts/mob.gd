@@ -38,3 +38,9 @@ func _physics_process(delta: float) -> void:
 #Death Function called when health = 0
 func die():
 	queue_free()
+	
+
+func attack_animation():
+	animated_sprite.play("hurt")
+	await get_tree().create_timer(.5).timeout
+	animated_sprite.play("walk_angry")

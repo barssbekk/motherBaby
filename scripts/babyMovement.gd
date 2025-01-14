@@ -2,12 +2,20 @@ extends CharacterBody2D
 
 @export var movement_speed : float = Stats.babyspeed + 10
 var character_direction : Vector2
+var mouse_position = null
+var mouse_speed = 500
+var mouse_activated : bool = false
 
 func _physics_process(delta: float) -> void:
 	character_direction.x = Input.get_axis("arrow_left", "arrow_right")
 	character_direction.y = Input.get_axis("arrow_up", "arrow_down")
 	
+	if mouse_activated == true:
+		mouse_position = get_global_mouse_position()
+		self.position = mouse_position
 	
+	if Input.is_action_just_pressed("switch_baby_movement"):
+		switch_baby_movement()
 	
 	
 	# Flip
@@ -26,3 +34,9 @@ func _physics_process(delta: float) -> void:
 		#if %mamaSprite.animation != "Idle": %mamaSprite.animation = "Idle"
 		
 	move_and_slide()
+
+func switch_baby_movement():
+	if mouse_activated == false:
+		mouse_activated = true
+	else:
+		mouse_activated = false

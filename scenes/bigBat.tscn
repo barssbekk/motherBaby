@@ -161,12 +161,12 @@ scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_8a00q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 0.823529, 0.247059, 1)
 z_index = 5
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_wadc6")
-animation = &"walk_angry"
+animation = &"hurt"
 autoplay = "idle"
-frame_progress = 0.0888781
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_1f3ky")]
 max_Health = 20

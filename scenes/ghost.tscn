@@ -175,7 +175,7 @@ size = Vector2(25, 30.2631)
 
 [node name="ghost" type="CharacterBody2D"]
 collision_layer = 4
-collision_mask = 6
+collision_mask = 0
 script = ExtResource("1_bja26")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -186,7 +186,6 @@ shape = SubResource("RectangleShape2D_7jdyc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 5
-scale = Vector2(0.64, 0.64)
 sprite_frames = SubResource("SpriteFrames_x5rxy")
 animation = &"attack"
 

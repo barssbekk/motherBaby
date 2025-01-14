@@ -8,6 +8,8 @@ var current_Health : float
 func damage(attack: Attack):
 	var is_critical := false
 	current_Health -= attack.attack_damage
+	if get_parent().has_method("attack_animation"):
+		get_parent().attack_animation()
 	if get_parent().name != "mamaTearUpgrade":
 		DamageNumbers.display_number(attack.attack_damage, self.global_position, is_critical) #Calls dmg popup func in DamageNumbers singleton
 	#print(get_parent().name + " was hit!")

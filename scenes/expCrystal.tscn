@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://7adfmg74dtn1"]
+
+[ext_resource type="Script" path="res://scripts/mama_tear_upgrade.gd" id="1_yvy4b"]
+[ext_resource type="Texture2D" uid="uid://dwkbim5a1pb7r" path="res://assets/sprites/XP_crystal.png" id="2_phvgw"]
+[ext_resource type="PackedScene" uid="uid://dc4xfsgjukcbm" path="res://scenes/HitboxComponent.tscn" id="3_0f0io"]
+[ext_resource type="PackedScene" uid="uid://bwdbnj13eriax" path="res://scenes/HealthComponent.tscn" id="4_m0588"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbnlb"]
+atlas = ExtResource("2_phvgw")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m06r5"]
+
+[node name="expCrystal" type="Node2D"]
+script = ExtResource("1_yvy4b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_wbnlb")
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_0f0io")]
+collision_layer = 8
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("CircleShape2D_m06r5")
+
+[node name="HealthComponent" parent="." instance=ExtResource("4_m0588")]
+max_Health = 1
