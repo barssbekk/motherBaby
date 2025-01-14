@@ -5,8 +5,6 @@ var babyspeed := 80
 
 
 
-
-
 func _ready() -> void:
 	pass 
 

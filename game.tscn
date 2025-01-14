@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=4 uid="uid://d12xnn6slwj61"]
+[gd_scene load_steps=19 format=4 uid="uid://d12xnn6slwj61"]
 
 [ext_resource type="PackedScene" uid="uid://cpijbgtfhbkqm" path="res://scenes/player.tscn" id="1_1iqdn"]
+[ext_resource type="Script" path="res://game.gd" id="1_6mh7n"]
 [ext_resource type="PackedScene" uid="uid://d26vwd4g3x0x8" path="res://scenes/babyPointer.tscn" id="2_2kw0m"]
 [ext_resource type="PackedScene" uid="uid://fsbt5n1jq4op" path="res://scenes/ghost.tscn" id="2_h1rdq"]
 [ext_resource type="Texture2D" uid="uid://bnek1nseml03" path="res://assets/sprites/Ws.png" id="3_cshby"]
@@ -14,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://ca8itul2ohwjh" path="res://scenes/lockRed.tscn" id="12_bkbq3"]
 [ext_resource type="PackedScene" uid="uid://c3undegxrca3v" path="res://scenes/lockOrange.tscn" id="13_4orny"]
 [ext_resource type="PackedScene" uid="uid://bqx6sm68irkm5" path="res://scenes/lockYellow.tscn" id="14_rx7js"]
+[ext_resource type="PackedScene" uid="uid://ltbfkc7g04ob" path="res://scenes/babycamera.tscn" id="15_uo245"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mcu5c"]
 texture = ExtResource("3_cshby")
@@ -302,6 +304,7 @@ physics_layer_0/collision_layer = 17
 sources/0 = SubResource("TileSetAtlasSource_mcu5c")
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_6mh7n")
 
 [node name="Player" parent="." instance=ExtResource("1_1iqdn")]
 position = Vector2(59, -51)
@@ -311,6 +314,13 @@ position = Vector2(-4.76837e-07, 0)
 
 [node name="BabyPointer" parent="." instance=ExtResource("2_2kw0m")]
 position = Vector2(58, -26)
+
+[node name="babyCamera" parent="." instance=ExtResource("15_uo245")]
+position = Vector2(60, -33)
+
+[node name="Camera2D" type="Camera2D" parent="babyCamera"]
+position = Vector2(-4.76837e-07, 0)
+enabled = false
 
 [node name="Node" type="Node" parent="."]
 
