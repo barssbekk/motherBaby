@@ -1,13 +1,17 @@
 [gd_scene load_steps=7 format=3 uid="uid://3iex3gbyekmd"]
 
 [ext_resource type="Script" path="res://scripts/mama_tear_upgrade.gd" id="1_dps5y"]
+<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://bnek1nseml03" path="res://assets/sprites/Ws.png" id="1_ivq55"]
 [ext_resource type="PackedScene" uid="uid://dc4xfsgjukcbm" path="res://scenes/HitboxComponent.tscn" id="2_d7qpn"]
+=======
+[ext_resource type="PackedScene" uid="uid://dc4xfsgjukcbm" path="res://scenes/HitboxComponent.tscn" id="2_d7qpn"]
+[ext_resource type="Texture2D" uid="uid://75hgqtqoe3t2" path="res://assets/sprites/mama-orb.png" id="2_ea3f2"]
+>>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://bwdbnj13eriax" path="res://scenes/HealthComponent.tscn" id="3_6xfmk"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0mgs1"]
-atlas = ExtResource("1_ivq55")
-region = Rect2(72, 264, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_2v1at"]
+atlas = ExtResource("2_ea3f2")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m06r5"]
 
@@ -15,7 +19,7 @@ region = Rect2(72, 264, 32, 32)
 script = ExtResource("1_dps5y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("AtlasTexture_0mgs1")
+texture = SubResource("AtlasTexture_2v1at")
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("2_d7qpn")]
 collision_layer = 8
