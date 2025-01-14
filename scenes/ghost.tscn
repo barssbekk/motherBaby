@@ -191,7 +191,7 @@ sprite_frames = SubResource("SpriteFrames_x5rxy")
 animation = &"attack"
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_nsnx0")]
-max_Health = 2
+max_Health = 10
 
 [node name="DamageComponent" parent="." instance=ExtResource("2_nhb6r")]
 new_attack_damage = 6

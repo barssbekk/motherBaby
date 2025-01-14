@@ -9,12 +9,12 @@ script = ExtResource("1_vshbp")
 mob_scene = ExtResource("2_umle2")
 
 [node name="startSpawningTimer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 50.0
 one_shot = true
 autostart = true
 
 [node name="spawningSpeed" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 5.0
 autostart = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

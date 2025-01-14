@@ -87,3 +87,10 @@ func mama_tear_upgrade_pickup(area):
 	if area.get_parent().name == "mamaTearUpgrade":
 		mama_tear_timer.start()
 		print("MAMA TEAR UPGRADE GOT")
+	if area.get_parent().name == "experienceOrb":
+		gain_exp()
+		print("XP GAINED")
+		
+
+func gain_exp():
+	pass
