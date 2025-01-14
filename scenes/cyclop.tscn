@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://cbta0kcinw8dm" path="res://assets/sprites/BardHitAnim-Sheet.png" id="1_emel5"]
 [ext_resource type="Texture2D" uid="uid://c7oc8g3rx7aec" path="res://assets/sprites/BardIdleanim-Sheet-export.png" id="2_vnfmp"]
 [ext_resource type="Texture2D" uid="uid://d3xjr36j8wkcj" path="res://assets/sprites/BardWalkanim-Sheet-export.png" id="3_yjswb"]
-[ext_resource type="PackedScene" uid="uid://bwdbnj13eriax" path="res://scenes/HealthComponent.tscn" id="5_3wadi"]
+[ext_resource type="PackedScene" uid="uid://bwdbnj13eriax" path="res://scenes/healthComponent.tscn" id="5_3wadi"]
 [ext_resource type="PackedScene" uid="uid://24q08luwhx6e" path="res://scenes/damageComponent.tscn" id="6_56irx"]
-[ext_resource type="PackedScene" uid="uid://dc4xfsgjukcbm" path="res://scenes/HitboxComponent.tscn" id="7_dl23c"]
+[ext_resource type="PackedScene" uid="uid://dc4xfsgjukcbm" path="res://scenes/hitboxComponent.tscn" id="7_dl23c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jg40g"]
 atlas = ExtResource("1_emel5")
