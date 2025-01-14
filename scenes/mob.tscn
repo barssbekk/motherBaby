@@ -1,9 +1,9 @@
 [gd_scene load_steps=26 format=3 uid="uid://f16y3mfyq1bv"]
 
 [ext_resource type="Script" path="res://scripts/mob.gd" id="1_rurde"]
-[ext_resource type="PackedScene" uid="uid://dc4xfsgjukcbm" path="res://scenes/hitboxComponent.tscn" id="2_ser45"]
+[ext_resource type="PackedScene" uid="uid://dc4xfsgjukcbm" path="res://scenes/HitboxComponent.tscn" id="2_ser45"]
 [ext_resource type="Texture2D" uid="uid://nexgo6ummtnc" path="res://assets/sprites/enemy_bat_fangs_fixed.png" id="2_tletk"]
-[ext_resource type="PackedScene" uid="uid://bwdbnj13eriax" path="res://scenes/healthComponent.tscn" id="3_l22xe"]
+[ext_resource type="PackedScene" uid="uid://bwdbnj13eriax" path="res://scenes/HealthComponent.tscn" id="3_l22xe"]
 [ext_resource type="Texture2D" uid="uid://bfcols53tlcg0" path="res://assets/sprites/enemy_bat_fixed.png" id="3_rsoji"]
 [ext_resource type="PackedScene" uid="uid://24q08luwhx6e" path="res://scenes/damageComponent.tscn" id="5_awbk0"]
 
