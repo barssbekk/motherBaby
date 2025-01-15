@@ -427,7 +427,6 @@ position = Vector2(0, -3)
 shape = SubResource("CapsuleShape2D_8br6c")
 
 [node name="HealthComponent" parent="." instance=ExtResource("7_3xmlx")]
-max_Health = 1
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("6_devl0")]
 collision_mask = 9

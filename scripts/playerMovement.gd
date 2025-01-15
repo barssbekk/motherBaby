@@ -17,6 +17,7 @@ func _ready() -> void:
 	Stats.exp_required = experiencerequired
 	Stats.current_exp = experience
 	Stats.lives = lives
+	Stats.level = level
 
 
 func _physics_process(delta: float) -> void:
@@ -88,6 +89,10 @@ func birth_baby():
 	add_child(babyinstance)
 	babyinstance.top_level = true
 	babyinstance.position = spawn_position
+	babyinstance.get_child(2).new_attack_damage = Stats.baby_atk
+	babyinstance.get_child(4).get_child(0).shape.radius += Stats.range
+	babyinstance.get_child(2).attack_speed = Stats.atk_spd
+	babyinstance.get_child(3).max_Health = Stats.baby_hp
 
 
 func mama_tear_upgrade():
@@ -110,9 +115,12 @@ func level_up():
 		experience -= experiencerequired
 		Stats.current_exp = experience
 		level += 1
-		experiencerequired = 8 * pow(level, 2) + 50
+		experiencerequired = 5 * pow(level, 2) + 50
 		Stats.exp_required = experiencerequired
+		Stats.level = level
 		print("Level " + str(level) + "!    Exp required: " + str(experiencerequired))
+		get_tree().paused = true
+		get_parent().choose_cards()
 
 
 

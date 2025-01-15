@@ -1,10 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://cjd54imge5fr"]
+[gd_scene load_steps=13 format=3 uid="uid://cjd54imge5fr"]
 
 [ext_resource type="FontFile" uid="uid://w71llr8o8xqg" path="res://assets/fonts/MegamaxJonathanToo-YqOq2.ttf" id="1_fyn0f"]
+[ext_resource type="Script" path="res://scenes/ui.gd" id="1_ri8km"]
+[ext_resource type="Script" path="res://scenes/controlmain.gd" id="2_jvett"]
 [ext_resource type="Texture2D" uid="uid://b2nbiq288befy" path="res://assets/sprites/icons/hearttt.png" id="2_xol7i"]
 [ext_resource type="Script" path="res://scenes/health_label.gd" id="2_yq3vm"]
 [ext_resource type="Script" path="res://scenes/progress_bar.gd" id="3_ofp6i"]
 [ext_resource type="Script" path="res://scenes/heart.gd" id="4_na4wd"]
+[ext_resource type="Script" path="res://scenes/level_label.gd" id="6_gagts"]
+[ext_resource type="Script" path="res://scenes/card_anchor.gd" id="8_1rmbm"]
+[ext_resource type="Script" path="res://scenes/time.gd" id="9_wxm44"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ca7xx"]
 bg_color = Color(0.14902, 0.329412, 0.486275, 1)
@@ -13,6 +18,7 @@ bg_color = Color(0.14902, 0.329412, 0.486275, 1)
 bg_color = Color(0, 0.988235, 0.952941, 1)
 
 [node name="UI" type="CanvasLayer"]
+script = ExtResource("1_ri8km")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -21,6 +27,7 @@ offset_left = -101.0
 offset_top = -140.0
 offset_right = -61.0
 offset_bottom = -100.0
+script = ExtResource("2_jvett")
 
 [node name="healthLabel" type="Label" parent="Control"]
 texture_filter = 1
@@ -33,7 +40,7 @@ scale = Vector2(0.794221, 0.9496)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_fyn0f")
 theme_override_font_sizes/font_size = 22
-text = "1hp"
+text = "1"
 script = ExtResource("2_yq3vm")
 
 [node name="Heart" type="TextureRect" parent="Control"]
@@ -49,22 +56,67 @@ script = ExtResource("4_na4wd")
 [node name="ProgressBar" type="ProgressBar" parent="Control"]
 layout_mode = 0
 offset_left = 194.0
-offset_top = 145.0
+offset_top = 151.0
 offset_right = 494.0
-offset_bottom = 149.0
+offset_bottom = 155.0
 theme_override_styles/background = SubResource("StyleBoxFlat_ca7xx")
 theme_override_styles/fill = SubResource("StyleBoxFlat_i3ktd")
 max_value = 1.0
-value = 1.0
 show_percentage = false
 script = ExtResource("3_ofp6i")
 
 [node name="levelLabel" type="Label" parent="Control"]
 layout_mode = 0
 offset_left = 344.0
-offset_top = 147.0
+offset_top = 140.0
 offset_right = 384.0
-offset_bottom = 170.0
+offset_bottom = 163.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_fyn0f")
+theme_override_font_sizes/font_size = 11
 text = "1"
+script = ExtResource("6_gagts")
+
+[node name="cardAnchor" type="Control" parent="Control"]
+process_mode = 3
+anchors_preset = 0
+offset_left = 140.0
+offset_top = 195.0
+offset_right = 180.0
+offset_bottom = 235.0
+script = ExtResource("8_1rmbm")
+
+[node name="cardAnchor2" type="Control" parent="Control"]
+process_mode = 3
+anchors_preset = 0
+offset_left = 276.0
+offset_top = 195.0
+offset_right = 316.0
+offset_bottom = 235.0
+script = ExtResource("8_1rmbm")
+
+[node name="cardAnchor3" type="Control" parent="Control"]
+process_mode = 3
+anchors_preset = 0
+offset_left = 410.0
+offset_top = 195.0
+offset_right = 450.0
+offset_bottom = 235.0
+script = ExtResource("8_1rmbm")
+
+[node name="Time" type="Label" parent="Control"]
+offset_left = 334.0
+offset_top = 395.0
+offset_right = 374.0
+offset_bottom = 418.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_fyn0f")
+theme_override_font_sizes/font_size = 11
+text = "0"
+script = ExtResource("9_wxm44")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
 
 [connection signal="died" from="Control/healthLabel" to="Control/Heart" method="_on_health_label_died"]
+[connection signal="timeout" from="Timer" to="Control/Time" method="_on_timer_timeout"]

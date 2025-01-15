@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bsylnkrppaq70"]
+[gd_scene load_steps=33 format=3 uid="uid://bme2ayr1dlkba"]
 
 [ext_resource type="Script" path="res://scripts/wolf.gd" id="1_g6qes"]
 [ext_resource type="Texture2D" uid="uid://7uu750ooum8e" path="res://assets/sprites/Dog_Attack_animation-Sheet.png" id="1_je421"]
@@ -200,9 +200,10 @@ frame = 4
 frame_progress = 1.0
 
 [node name="HealthComponent" parent="." instance=ExtResource("4_mi0eq")]
-max_Health = 5
+max_Health = 100
 
 [node name="DamageComponent" parent="." instance=ExtResource("5_hpxc3")]
+new_attack_damage = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 9)

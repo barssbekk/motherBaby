@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://d12xnn6slwj61"]
+[gd_scene load_steps=22 format=4 uid="uid://d12xnn6slwj61"]
 
 [ext_resource type="PackedScene" uid="uid://cpijbgtfhbkqm" path="res://scenes/player.tscn" id="1_1iqdn"]
 [ext_resource type="Script" path="res://game.gd" id="1_6mh7n"]
@@ -9,16 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://neipbdylwd4s" path="res://scenes/cyclop.tscn" id="7_faand"]
 [ext_resource type="PackedScene" uid="uid://ckggyrcdjdxjm" path="res://scenes/skeletonSpawner.tscn" id="9_om1id"]
 [ext_resource type="PackedScene" uid="uid://cjadqtvekmslw" path="res://scenes/ghostSpawner.tscn" id="10_fsv27"]
-[ext_resource type="PackedScene" uid="uid://imoepn0wd6jo" path="res://scenes/mobSpawner.tscn" id="10_lqen3"]
+[ext_resource type="PackedScene" uid="uid://dj8lp2gl7j0oo" path="res://scenes/mobSpawner.tscn" id="10_lqen3"]
 [ext_resource type="PackedScene" uid="uid://3iex3gbyekmd" path="res://scenes/mama_tear_upgrade.tscn" id="11_tid41"]
-[ext_resource type="PackedScene" path="res://scenes/lockRed.tscn" id="12_bkbq3"]
-[ext_resource type="PackedScene" path="res://scenes/lockOrange.tscn" id="13_4orny"]
-[ext_resource type="PackedScene" path="res://scenes/lockYellow.tscn" id="14_rx7js"]
-[ext_resource type="PackedScene" path="res://scenes/babycamera.tscn" id="15_uo245"]
-[ext_resource type="PackedScene" uid="uid://bsylnkrppaq70" path="res://scenes/wolf.tscn" id="18_1iuy0"]
+[ext_resource type="PackedScene" uid="uid://ca8itul2ohwjh" path="res://scenes/lockRed.tscn" id="12_bkbq3"]
+[ext_resource type="PackedScene" uid="uid://c3undegxrca3v" path="res://scenes/lockOrange.tscn" id="13_4orny"]
+[ext_resource type="PackedScene" uid="uid://bqx6sm68irkm5" path="res://scenes/lockYellow.tscn" id="14_rx7js"]
+[ext_resource type="PackedScene" uid="uid://ltbfkc7g04ob" path="res://scenes/babycamera.tscn" id="15_uo245"]
 [ext_resource type="PackedScene" uid="uid://f16y3mfyq1bv" path="res://scenes/mob.tscn" id="18_46m6i"]
 [ext_resource type="PackedScene" uid="uid://7adfmg74dtn1" path="res://scenes/expCrystal.tscn" id="18_721no"]
-[ext_resource type="PackedScene" uid="uid://csa3x31epea1v" path="res://scenes/wolfSpawner.tscn" id="19_7jwbu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mcu5c"]
 texture = ExtResource("3_cshby")
@@ -639,9 +637,6 @@ position = Vector2(-116, -56)
 
 [node name="ghostSpawner" parent="." instance=ExtResource("10_fsv27")]
 
-[node name="wolfSpawner" parent="." instance=ExtResource("19_7jwbu")]
-position = Vector2(-229, -188)
-
 [node name="mamaTearUpgrade" parent="." instance=ExtResource("11_tid41")]
 position = Vector2(361, 39)
 
@@ -654,22 +649,25 @@ position = Vector2(360, 116)
 [node name="lockYellow" parent="." instance=ExtResource("14_rx7js")]
 position = Vector2(344, 116)
 
-[node name="expCrystal" parent="." instance=ExtResource("18_721no")]
-position = Vector2(31, -61)
-
-[node name="expCrystal2" parent="." instance=ExtResource("18_721no")]
-position = Vector2(45, -103)
-
-[node name="expCrystal3" parent="." instance=ExtResource("18_721no")]
-position = Vector2(18, -117)
-
-[node name="expCrystal4" parent="." instance=ExtResource("18_721no")]
-position = Vector2(-23, -117)
-
 [node name="Mob" parent="." instance=ExtResource("18_46m6i")]
 position = Vector2(-90, 60)
 
-[node name="wolf" parent="." instance=ExtResource("18_1iuy0")]
-position = Vector2(-137, -90)
+[node name="expCrystal" parent="." instance=ExtResource("18_721no")]
+position = Vector2(301, 39)
+
+[node name="expCrystal2" parent="." instance=ExtResource("18_721no")]
+position = Vector2(301, 66)
+
+[node name="expCrystal3" parent="." instance=ExtResource("18_721no")]
+position = Vector2(301, 93)
+
+[node name="expCrystal4" parent="." instance=ExtResource("18_721no")]
+position = Vector2(421, 39)
+
+[node name="expCrystal5" parent="." instance=ExtResource("18_721no")]
+position = Vector2(422, 66)
+
+[node name="expCrystal6" parent="." instance=ExtResource("18_721no")]
+position = Vector2(421, 92)
 
 [connection signal="exp_gained_sig" from="." to="Player" method="_on_game_exp_gained_sig"]

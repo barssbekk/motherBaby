@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvehp15pealkm"]
+
+[ext_resource type="Texture2D" uid="uid://vwds1lmcsaoe" path="res://assets/sprites/mama_extra_life.png" id="1_vqwin"]
+[ext_resource type="Script" path="res://scenes/card_plus_life.gd" id="2_0wlqn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_12fnf"]
+content_margin_left = 2.0
+content_margin_bottom = 10.0
+expand_margin_bottom = 10.0
+draw_center = false
+
+[node name="card_plus_life" type="Button"]
+offset_right = 136.0
+offset_bottom = 200.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_12fnf")
+button_mask = 5
+icon = ExtResource("1_vqwin")
+flat = true
+script = ExtResource("2_0wlqn")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

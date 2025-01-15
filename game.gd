@@ -27,3 +27,19 @@ func _process(delta: float) -> void:
 
 func exp_gained(amount):
 	emit_signal("exp_gained_sig", amount)
+
+
+
+func plus_baby():
+	$Player.get_child(4).wait_time *= 0.7
+	print($Player.get_child(4).wait_time)
+
+func plus_mom_speed():
+	$Player.movement_speed += 10
+
+func baby_hp():
+	pass
+	
+
+func choose_cards():
+	$UI.spawn_cards()

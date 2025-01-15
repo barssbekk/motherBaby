@@ -249,7 +249,6 @@ frame = 8
 frame_progress = 0.873868
 
 [node name="HealthComponent" parent="." instance=ExtResource("5_3wadi")]
-max_Health = 50
 
 [node name="DamageComponent" parent="." instance=ExtResource("6_56irx")]
 attack_speed = 2.0

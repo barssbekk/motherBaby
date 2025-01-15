@@ -40,7 +40,7 @@ func die():
 	get_parent().add_child(instance)
 	instance.top_level = true
 	instance.position = spawn_position
-	instance.amount = 25
+	instance.amount = 100
 	queue_free()
 
 func _on_damage_component_skeleton_attack() -> void:

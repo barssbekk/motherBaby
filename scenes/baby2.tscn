@@ -66,7 +66,7 @@ autoplay = "default"
 new_attack_damage = 2
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_ayao1")]
-max_Health = 20
+max_Health = 20.0
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_gmwrd")]
 collision_layer = 2

@@ -1,7 +1,9 @@
-extends Node2D
+extends Label
 
-var amount := 100
+var time := 0
 
+func updateTime():
+	self.text = str(time)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -12,6 +14,6 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_hitbox_component_area_entered(area: Area2D) -> void:
-	get_parent().exp_gained(amount)
-	queue_free()
+func _on_timer_timeout() -> void:
+	time += 1
+	updateTime()

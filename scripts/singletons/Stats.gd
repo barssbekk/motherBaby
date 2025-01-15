@@ -4,10 +4,17 @@ var current_exp : float
 var exp_required : float
 var babyspeed := 80
 var lives : float
-signal exp_gained_sig(amount: float)
+var level : float
+var baby_atk := 2
+var range := 0
+var atk_spd := 1
+var baby_hp := 20
 
-func exp_gained(amount: float):
-	emit_signal("exp_gained_sig", amount)
+
+
+
+
+
 
 
 

@@ -1,7 +1,7 @@
 extends Node2D
 class_name HealthComponent
 
-@export var max_Health := 3
+@export var max_Health := 3.0
 var current_Health : float
 
 #Take damage and call death function when health reaches 0
@@ -17,7 +17,6 @@ func damage(attack: Attack):
 		if get_parent().has_method("die"):
 			#print(get_parent().name + " died! :C")
 			get_parent().die() #calls any func named "die" in entity's script
-
 
 
 # Called when the node enters the scene tree for the first time.

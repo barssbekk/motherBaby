@@ -13,7 +13,7 @@ func health_changed():
 
 
 func calc():
-	return str(currenthealth) + "hp"
+	return str(currenthealth)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

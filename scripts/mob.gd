@@ -44,7 +44,7 @@ func die():
 	get_parent().add_child(instance)
 	instance.top_level = true
 	instance.position = spawn_position
-	instance.amount = 5
+	instance.amount = 15
 	queue_free()
 
 

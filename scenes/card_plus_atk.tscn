@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b84jovrd1wute"]
+
+[ext_resource type="Texture2D" uid="uid://gxg5dy3sgnr3" path="res://assets/sprites/baby-atk-damage.png" id="1_bwdjn"]
+[ext_resource type="Script" path="res://scenes/card_plus_atk.gd" id="2_g8uv8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_12fnf"]
+content_margin_left = 2.0
+content_margin_bottom = 10.0
+expand_margin_bottom = 10.0
+draw_center = false
+
+[node name="card_plus_atk" type="Button"]
+offset_right = 136.0
+offset_bottom = 200.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_12fnf")
+button_mask = 5
+icon = ExtResource("1_bwdjn")
+flat = true
+script = ExtResource("2_g8uv8")
+
+[connection signal="pressed" from="." to="." method="plus_atk"]

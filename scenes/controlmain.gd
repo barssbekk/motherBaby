@@ -1,6 +1,25 @@
-extends Node2D
+extends Control
 
-var amount := 100
+
+
+
+
+
+
+
+
+func plus_baby():
+	get_parent().plus_baby()
+
+func plus_mom_speed():
+	get_parent().plus_mom_speed()
+
+func baby_hp():
+	get_parent().baby_hp()
+
+
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,8 +29,3 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
-
-func _on_hitbox_component_area_entered(area: Area2D) -> void:
-	get_parent().exp_gained(amount)
-	queue_free()
