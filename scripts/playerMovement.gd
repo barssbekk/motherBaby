@@ -6,6 +6,9 @@ var is_born = false  # For birth animation
 var baby_scene = preload("res://scenes/baby2.tscn")
 var mama_tear_scene = preload("res://scenes/mamaTear.tscn")
 @onready var mama_tear_timer = $mamaTearTimer
+var experience : float = 0
+var experiencerequired : float = 50
+var level : int = 1
 
 func _ready() -> void:
 	$AnimatedSprite2D.play("birth")  # Start birth animation
@@ -87,10 +90,20 @@ func mama_tear_upgrade_pickup(area):
 	if area.get_parent().name == "mamaTearUpgrade":
 		mama_tear_timer.start()
 		print("MAMA TEAR UPGRADE GOT")
-	if area.get_parent().name == "experienceOrb":
-		gain_exp()
-		print("XP GAINED")
-		
 
-func gain_exp():
-	pass
+
+
+func level_up():
+	if experience >= experiencerequired:
+		experience -= experiencerequired
+		level += 1
+		experiencerequired = 4 * pow(level, 2) + 50
+		print("Level " + str(level) + "!    Exp required: " + str(experiencerequired))
+
+
+
+func _on_game_exp_gained_sig(amount: float) -> void:
+	print(str(amount) + " EXP gained!")
+	experience += amount
+	print("Current EXP: " + str(experience) + " / " + str(experiencerequired))
+	level_up()

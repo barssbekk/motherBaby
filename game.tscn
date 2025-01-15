@@ -1,21 +1,22 @@
-[gd_scene load_steps=21 format=4 uid="uid://d12xnn6slwj61"]
+[gd_scene load_steps=22 format=4 uid="uid://d12xnn6slwj61"]
 
 [ext_resource type="PackedScene" uid="uid://cpijbgtfhbkqm" path="res://scenes/player.tscn" id="1_1iqdn"]
 [ext_resource type="Script" path="res://game.gd" id="1_6mh7n"]
 [ext_resource type="PackedScene" uid="uid://d26vwd4g3x0x8" path="res://scenes/babyPointer.tscn" id="2_2kw0m"]
-[ext_resource type="PackedScene" uid="uid://fsbt5n1jq4op" path="res://scenes/ghost.tscn" id="2_h1rdq"]
 [ext_resource type="Texture2D" uid="uid://bnek1nseml03" path="res://assets/sprites/Ws.png" id="3_cshby"]
 [ext_resource type="PackedScene" uid="uid://niq4fy4fcyk2" path="res://scenes/baby2.tscn" id="4_onlnk"]
 [ext_resource type="PackedScene" uid="uid://cjd54imge5fr" path="res://scenes/ui.tscn" id="4_vymbv"]
 [ext_resource type="PackedScene" uid="uid://neipbdylwd4s" path="res://scenes/cyclop.tscn" id="7_faand"]
-[ext_resource type="PackedScene" path="res://scenes/skeletonSpawner.tscn" id="9_om1id"]
-[ext_resource type="PackedScene" path="res://scenes/ghostSpawner.tscn" id="10_fsv27"]
-[ext_resource type="PackedScene" path="res://scenes/mobSpawner.tscn" id="10_lqen3"]
+[ext_resource type="PackedScene" uid="uid://ckggyrcdjdxjm" path="res://scenes/skeletonSpawner.tscn" id="9_om1id"]
+[ext_resource type="PackedScene" uid="uid://cjadqtvekmslw" path="res://scenes/ghostSpawner.tscn" id="10_fsv27"]
+[ext_resource type="PackedScene" uid="uid://dj8lp2gl7j0oo" path="res://scenes/mobSpawner.tscn" id="10_lqen3"]
 [ext_resource type="PackedScene" uid="uid://3iex3gbyekmd" path="res://scenes/mama_tear_upgrade.tscn" id="11_tid41"]
-[ext_resource type="PackedScene" path="res://scenes/lockRed.tscn" id="12_bkbq3"]
-[ext_resource type="PackedScene" path="res://scenes/lockOrange.tscn" id="13_4orny"]
-[ext_resource type="PackedScene" path="res://scenes/lockYellow.tscn" id="14_rx7js"]
-[ext_resource type="PackedScene" path="res://scenes/babycamera.tscn" id="15_uo245"]
+[ext_resource type="PackedScene" uid="uid://ca8itul2ohwjh" path="res://scenes/lockRed.tscn" id="12_bkbq3"]
+[ext_resource type="PackedScene" uid="uid://c3undegxrca3v" path="res://scenes/lockOrange.tscn" id="13_4orny"]
+[ext_resource type="PackedScene" uid="uid://bqx6sm68irkm5" path="res://scenes/lockYellow.tscn" id="14_rx7js"]
+[ext_resource type="PackedScene" uid="uid://ltbfkc7g04ob" path="res://scenes/babycamera.tscn" id="15_uo245"]
+[ext_resource type="PackedScene" uid="uid://f16y3mfyq1bv" path="res://scenes/mob.tscn" id="18_46m6i"]
+[ext_resource type="PackedScene" uid="uid://7adfmg74dtn1" path="res://scenes/expCrystal.tscn" id="18_721no"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mcu5c"]
 texture = ExtResource("3_cshby")
@@ -628,9 +629,6 @@ tile_set = SubResource("TileSet_rc7iq")
 [node name="cyclop" parent="." instance=ExtResource("7_faand")]
 position = Vector2(359, 70)
 
-[node name="ghost" parent="." instance=ExtResource("2_h1rdq")]
-position = Vector2(103, 42)
-
 [node name="mobSpawner" parent="." instance=ExtResource("10_lqen3")]
 position = Vector2(-116, -94)
 
@@ -650,3 +648,20 @@ position = Vector2(360, 116)
 
 [node name="lockYellow" parent="." instance=ExtResource("14_rx7js")]
 position = Vector2(344, 116)
+
+[node name="expCrystal" parent="." instance=ExtResource("18_721no")]
+position = Vector2(31, -61)
+
+[node name="expCrystal2" parent="." instance=ExtResource("18_721no")]
+position = Vector2(45, -103)
+
+[node name="expCrystal3" parent="." instance=ExtResource("18_721no")]
+position = Vector2(18, -117)
+
+[node name="expCrystal4" parent="." instance=ExtResource("18_721no")]
+position = Vector2(-23, -117)
+
+[node name="Mob" parent="." instance=ExtResource("18_46m6i")]
+position = Vector2(-90, 60)
+
+[connection signal="exp_gained_sig" from="." to="Player" method="_on_game_exp_gained_sig"]

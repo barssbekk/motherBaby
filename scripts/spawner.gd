@@ -10,7 +10,7 @@ func update_spawning_speed():
 	get_child(1).wait_time /= difficulty_increase
 	difficulty *= difficulty_increase
 	#print(get_child(1).wait_time)
-	print(difficulty)
+
 
 
 
@@ -40,6 +40,10 @@ func move_spawner():
 func _on_start_spawning_timer_timeout() -> void:
 	spawning = true
 	print(self.name + " has been activated")
+
+
+func exp_gained(amount):
+	get_parent().exp_gained(amount)
 
 
 

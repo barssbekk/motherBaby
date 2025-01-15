@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgoj8tw7v34uj"]
+
+[ext_resource type="Script" path="res://scripts/singletons/Stats.gd" id="1_256wr"]
+
+[node name="statHandler" type="Node"]
+script = ExtResource("1_256wr")

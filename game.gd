@@ -2,6 +2,8 @@ extends Node2D
 
 @onready var mom_cam = $Player/Camera2D
 @onready var baby_cam = $babyCamera/Camera2D
+signal exp_gained_sig(amount: float)
+
 
 func camera_switch():
 	if mom_cam.enabled == true:
@@ -21,3 +23,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("switch_camera"):
 		camera_switch()
+
+
+func exp_gained(amount):
+	emit_signal("exp_gained_sig", amount)

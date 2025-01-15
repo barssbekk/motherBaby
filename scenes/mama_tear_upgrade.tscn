@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://3iex3gbyekmd"]
 
-[ext_resource type="Script" path="res://scripts/mama_tear_upgrade.gd" id="1_dps5y"]
+[ext_resource type="Script" path="res://scenes/mama_tear_upgrade.gd" id="1_sdh1e"]
 [ext_resource type="PackedScene" uid="uid://dc4xfsgjukcbm" path="res://scenes/HitboxComponent.tscn" id="2_d7qpn"]
 [ext_resource type="Texture2D" uid="uid://75hgqtqoe3t2" path="res://assets/sprites/mama-orb.png" id="2_jfoyp"]
 [ext_resource type="PackedScene" uid="uid://bwdbnj13eriax" path="res://scenes/HealthComponent.tscn" id="3_6xfmk"]
@@ -11,7 +11,7 @@ atlas = ExtResource("2_jfoyp")
 [sub_resource type="CircleShape2D" id="CircleShape2D_m06r5"]
 
 [node name="mamaTearUpgrade" type="Node2D"]
-script = ExtResource("1_dps5y")
+script = ExtResource("1_sdh1e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_wbnlb")
