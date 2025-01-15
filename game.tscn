@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://d12xnn6slwj61"]
+[gd_scene load_steps=23 format=4 uid="uid://d12xnn6slwj61"]
 
 [ext_resource type="PackedScene" uid="uid://cpijbgtfhbkqm" path="res://scenes/player.tscn" id="1_1iqdn"]
 [ext_resource type="Script" path="res://game.gd" id="1_6mh7n"]
@@ -14,9 +14,10 @@
 [ext_resource type="PackedScene" uid="uid://ca8itul2ohwjh" path="res://scenes/lockRed.tscn" id="12_bkbq3"]
 [ext_resource type="PackedScene" uid="uid://c3undegxrca3v" path="res://scenes/lockOrange.tscn" id="13_4orny"]
 [ext_resource type="PackedScene" uid="uid://bqx6sm68irkm5" path="res://scenes/lockYellow.tscn" id="14_rx7js"]
-[ext_resource type="PackedScene" uid="uid://ltbfkc7g04ob" path="res://scenes/babycamera.tscn" id="15_uo245"]
+[ext_resource type="PackedScene" path="res://scenes/babycamera.tscn" id="15_uo245"]
 [ext_resource type="PackedScene" uid="uid://f16y3mfyq1bv" path="res://scenes/mob.tscn" id="18_46m6i"]
 [ext_resource type="PackedScene" uid="uid://7adfmg74dtn1" path="res://scenes/expCrystal.tscn" id="18_721no"]
+[ext_resource type="AudioStream" uid="uid://bg5e7oebe8foj" path="res://assets/music/Pix- Alien wolves.mp3" id="18_socqk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mcu5c"]
 texture = ExtResource("3_cshby")
@@ -669,5 +670,10 @@ position = Vector2(422, 66)
 
 [node name="expCrystal6" parent="." instance=ExtResource("18_721no")]
 position = Vector2(421, 92)
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("18_socqk")
+autoplay = true
 
 [connection signal="exp_gained_sig" from="." to="Player" method="_on_game_exp_gained_sig"]
