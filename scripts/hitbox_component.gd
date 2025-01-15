@@ -13,3 +13,7 @@ func _process(delta: float) -> void:
 
 func _ready() -> void:
 	pass
+
+
+func _on_damage_component_skeleton_attack() -> void:
+	pass # Replace with function body.
