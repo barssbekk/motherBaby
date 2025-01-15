@@ -438,7 +438,7 @@ position = Vector2(0, -3)
 shape = SubResource("CapsuleShape2D_tqoir")
 
 [node name="birthBabyTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 10.0
 autostart = true
 
 [node name="mamaTearTimer" type="Timer" parent="."]

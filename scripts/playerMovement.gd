@@ -97,7 +97,7 @@ func level_up():
 	if experience >= experiencerequired:
 		experience -= experiencerequired
 		level += 1
-		experiencerequired = 4 * pow(level, 2) + 50
+		experiencerequired = 8 * pow(level, 2) + 50
 		print("Level " + str(level) + "!    Exp required: " + str(experiencerequired))
 
 

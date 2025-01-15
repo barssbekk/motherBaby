@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+
 var exp_scene = preload("res://scenes/expCrystal.tscn")
 @onready var player = get_node("/root/Game/Player")
 @onready var animated_sprite = $AnimatedSprite2D

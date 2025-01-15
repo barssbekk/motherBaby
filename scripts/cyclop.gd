@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var exp_scene = preload("res://scenes/expCrystal.tscn")
 @onready var player = get_node("/root/Game/Player")
 @onready var animated_sprite = $AnimatedSprite2D
 var is_chasing = false
@@ -37,6 +38,12 @@ func _physics_process(delta: float) -> void:
 
 #Death Function called when health = 0
 func die():
+	var instance = exp_scene.instantiate()
+	var spawn_position := self.position
+	get_parent().add_child(instance)
+	instance.top_level = true
+	instance.position = spawn_position
+	instance.amount = 200
 	queue_free()
 
 
