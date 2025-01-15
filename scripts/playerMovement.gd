@@ -9,10 +9,14 @@ var mama_tear_scene = preload("res://scenes/mamaTear.tscn")
 var experience : float = 0
 var experiencerequired : float = 50
 var level : int = 1
+var lives := 1
 
 func _ready() -> void:
 	$AnimatedSprite2D.play("birth")  # Start birth animation
 	$AnimatedSprite2D.connect("animation_finished", Callable(self, "_on_animation_finished"))
+	Stats.exp_required = experiencerequired
+	Stats.current_exp = experience
+	Stats.lives = lives
 
 
 func _physics_process(delta: float) -> void:
@@ -45,8 +49,16 @@ func _physics_process(delta: float) -> void:
 func _on_animation_finished():
 	is_born = true
 
-# Player death with animation and delay
+
 func die():
+	lives -= 1
+	Stats.lives = lives
+	if lives == 0:
+		die2()
+
+# Player death with animation and delay
+func die2():
+		$HitboxComponent.queue_free()  # To prevent negative lives on death
 		$AnimatedSprite2D.play("death")  # Play death animation
 		set_process(false)
 		set_physics_process(false)
@@ -96,8 +108,10 @@ func mama_tear_upgrade_pickup(area):
 func level_up():
 	if experience >= experiencerequired:
 		experience -= experiencerequired
+		Stats.current_exp = experience
 		level += 1
 		experiencerequired = 8 * pow(level, 2) + 50
+		Stats.exp_required = experiencerequired
 		print("Level " + str(level) + "!    Exp required: " + str(experiencerequired))
 
 
@@ -105,5 +119,6 @@ func level_up():
 func _on_game_exp_gained_sig(amount: float) -> void:
 	print(str(amount) + " EXP gained!")
 	experience += amount
+	Stats.current_exp = experience
 	print("Current EXP: " + str(experience) + " / " + str(experiencerequired))
 	level_up()

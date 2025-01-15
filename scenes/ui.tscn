@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjd54imge5fr"]
+[gd_scene load_steps=8 format=3 uid="uid://cjd54imge5fr"]
 
 [ext_resource type="FontFile" uid="uid://w71llr8o8xqg" path="res://assets/fonts/MegamaxJonathanToo-YqOq2.ttf" id="1_fyn0f"]
 [ext_resource type="Texture2D" uid="uid://b2nbiq288befy" path="res://assets/sprites/icons/hearttt.png" id="2_xol7i"]
+[ext_resource type="Script" path="res://scenes/health_label.gd" id="2_yq3vm"]
+[ext_resource type="Script" path="res://scenes/progress_bar.gd" id="3_ofp6i"]
+[ext_resource type="Script" path="res://scenes/heart.gd" id="4_na4wd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ca7xx"]
+bg_color = Color(0.14902, 0.329412, 0.486275, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i3ktd"]
+bg_color = Color(0, 0.988235, 0.952941, 1)
 
 [node name="UI" type="CanvasLayer"]
 
@@ -13,7 +22,7 @@ offset_top = -140.0
 offset_right = -61.0
 offset_bottom = -100.0
 
-[node name="Label" type="Label" parent="Control"]
+[node name="healthLabel" type="Label" parent="Control"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 131.0
@@ -25,6 +34,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_fyn0f")
 theme_override_font_sizes/font_size = 22
 text = "1hp"
+script = ExtResource("2_yq3vm")
 
 [node name="Heart" type="TextureRect" parent="Control"]
 layout_mode = 0
@@ -34,3 +44,27 @@ offset_right = 147.0
 offset_bottom = 187.0
 scale = Vector2(0.52, 0.52)
 texture = ExtResource("2_xol7i")
+script = ExtResource("4_na4wd")
+
+[node name="ProgressBar" type="ProgressBar" parent="Control"]
+layout_mode = 0
+offset_left = 194.0
+offset_top = 145.0
+offset_right = 494.0
+offset_bottom = 149.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ca7xx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_i3ktd")
+max_value = 1.0
+value = 1.0
+show_percentage = false
+script = ExtResource("3_ofp6i")
+
+[node name="levelLabel" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 147.0
+offset_right = 384.0
+offset_bottom = 170.0
+text = "1"
+
+[connection signal="died" from="Control/healthLabel" to="Control/Heart" method="_on_health_label_died"]

@@ -19,6 +19,7 @@ height = 22.0
 size = Vector2(47, 16)
 
 [node name="lockOrange" type="Node2D"]
+modulate = Color(0.956863, 0.376471, 0.211765, 1)
 script = ExtResource("1_4usbi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

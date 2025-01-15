@@ -19,6 +19,7 @@ height = 22.0
 size = Vector2(45.5, 16)
 
 [node name="lockYellow" type="Node2D"]
+modulate = Color(1, 0.823529, 0.247059, 1)
 script = ExtResource("1_w8sxs")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

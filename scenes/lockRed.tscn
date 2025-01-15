@@ -19,6 +19,7 @@ height = 22.0
 size = Vector2(44, 16)
 
 [node name="lockRed" type="Node2D"]
+modulate = Color(0.843137, 0.14902, 0.219608, 1)
 script = ExtResource("1_y4i6q")
 
 [node name="lockSprite" type="Sprite2D" parent="."]
